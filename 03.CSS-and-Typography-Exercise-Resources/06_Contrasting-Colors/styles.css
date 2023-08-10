@@ -1,1 +1,21 @@
 /* TODO: style the html */
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+    background-color: white;
+}
+article {
+    margin: 3em;
+    padding: 2em;
+    color: white;
+    background-color: rgb(51, 102, 153);
+    border-radius: 16px;
+}
+h1 {
+    padding-left: 1em;
+    font-family: Georgia, serif;
+}
+p {
+    text-indent: 1.5em;
+}
