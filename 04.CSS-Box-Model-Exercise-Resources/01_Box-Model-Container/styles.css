@@ -1,1 +1,12 @@
-/* TODO: style the html */
+body {
+    background-color: lightslategray;
+}
+p {
+    color: whitesmoke;
+    width: 300px;
+    padding: 20px;
+    margin: auto;
+    border: 2px solid #e6eaef;
+    background-color: #0f4069;
+    border-radius: 15px 50px;
+}
