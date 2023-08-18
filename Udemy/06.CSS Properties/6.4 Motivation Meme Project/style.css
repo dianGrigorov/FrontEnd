@@ -1,0 +1,31 @@
+h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: aliceblue;
+    font-size: 3rem;
+
+}
+
+body {
+    background-color: black;
+}
+
+p {
+    color: aliceblue;
+}
+
+div {
+    
+   width: 50%;
+   margin-left: 25%;
+   text-align: center;
+    margin-top: 100px;
+}
+img {
+    border: 5px solid aliceblue;
+    width: 100%;
+    
+    
+}
