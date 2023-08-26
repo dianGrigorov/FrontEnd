@@ -16,41 +16,51 @@ body {
     line-height: 1.7;
     padding: 30px;
 }
+
 .header {
     height: 90vh;
-    background-image: linear-gradient(
-         to bottom left,
-         hsla(204, 100%, 28%, 0.3),
-         #004A7C) ,
-      url(./img/hero.jpg);
+    background-image: linear-gradient(to bottom left,
+            #0057915d,
+            #004A7C),
+        url(./img/hero.jpg);
     background-size: cover;
     background-position: top;
     position: relative;
     clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0% 100%);
 }
+
 .logo-box img {
-   
+
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 50px;
+    left: 50px;
+    animation: moveFromTop 1.5s;
 }
+
 .logo {
-    height: 55px;
+    height: 65px;
+    rotate: -20deg;
+
 }
-.heading-box{
-   position: absolute;
-   top: 40%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+
+.heading-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
-.heading-primary{
-   
+
+.heading-primary {
+
     color: #fff;
     text-transform: uppercase;
-    
+
     backface-visibility: hidden;
+    margin-bottom: 50px;
 }
-.heading-primary-main{
+
+.heading-primary-main {
     display: block;
     font-size: 2.5em;
     font-weight: 700;
@@ -60,7 +70,8 @@ body {
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
 }
-.heading-primary-sub{
+
+.heading-primary-sub {
     display: block;
     font-size: 1.5em;
     font-weight: 400;
@@ -78,6 +89,7 @@ body {
     80% {
         transform: translate(10px, 10px);
     }
+
     100% {
         opacity: 1;
         transform: translate(0);
@@ -98,4 +110,85 @@ body {
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgb(0, 0, 0, .6);
+}
+
+.btn:active {
+    transform: translate(-1px);
+    box-shadow: 0 5px 10px rgb(0, 0, 0, .6);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scale(2);
+    opacity: 0;
+}
+
+@keyframes moveFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+   
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+.btn-animated {
+    animation: moveFromBottom 1.5s .7s;
+  
+    animation-fill-mode: backwards;
+
 }
