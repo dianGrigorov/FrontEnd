@@ -1,0 +1,39 @@
+@import url(./typography.css);
+@import url(./main-colors.css);
+
+.sidenav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    border-radius: 0 0 .5rem .5rem;
+    background-color:var(--light-black);
+    box-shadow: 0 .2rem 3rem var(--light-gray, 0.2);
+    overflow: hidden;
+    
+}
+.sidenav a {
+    flex-basis: 25%;
+    font-size: 3rem;
+    color: var(--lime);
+    text-decoration: none;
+    align-items:center;
+   
+    padding: 1rem;
+}
+
+.sidenav a:hover {
+   
+    background-color: var(--light-gray);
+    color: var(--light-black);
+    font-weight: 600;
+    padding-bottom: 1rem;
+    box-shadow: 0 .2rem 3rem var(--light-black, 0.2) inset;
+  
+}
+
+@media (max-width: 800px){
+    .sidenav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
