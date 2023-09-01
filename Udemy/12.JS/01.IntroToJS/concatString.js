@@ -1,4 +1,4 @@
 var firstName = "Dian";
-var lastName = "Grigorov";
+var lastName = "Gregory";
 
 alert("Hello " + firstName + " " + lastName);
