@@ -3,39 +3,56 @@
 
 .sidenav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    border-radius: 0 0 .5rem .5rem;
-    background-color:var(--light-black);
-    box-shadow: 0 .2rem 3rem var(--light-gray, 0.2);
+    height: 12rem;
+    background-color: var(--light-black);
+    justify-content:flex-end;
+    align-items: center;
+    gap: .5em;
     overflow: hidden;
-    
+
 }
+
 .sidenav a {
-    flex-basis: 25%;
+    min-width: 25rem;
     font-size: 3rem;
-    color: var(--lime);
+    border-radius: 1rem;
+    background: #e0e0e0;
+    height: 8rem;
+    color: var(--light-black);
+    font-weight: 600;
+    box-shadow: inset 28px -28px 33px #b5b5b5,
+        inset -28px 28px 33px #ffffff;
     text-decoration: none;
-    align-items:center;
+    text-align: center;
    
     padding: 1rem;
 }
 
 .sidenav a:hover {
-   
+
     background-color: var(--light-gray);
-    color: var(--light-black);
+    color: var(--blue);
     font-weight: 600;
     padding-bottom: 1rem;
     box-shadow: 0 .2rem 3rem var(--light-black, 0.2) inset;
-  
+
+}
+.sidenav .logo-img {
+    width: 12rem;
+    flex-flow: wrap;
+   
+    justify-self: flex-start;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
     .sidenav {
         flex-direction: column;
         align-items: center;
+        height: auto;
+        padding: 1rem 0 1rem 0;
     }
+        .sidenav a{
+            min-width: 35rem;
+        }
 
-    
 }
