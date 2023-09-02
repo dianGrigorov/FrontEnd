@@ -3,55 +3,63 @@
 
 .sidenav {
     display: flex;
-    height: 8rem;
     background-color: var(--light-black);
     justify-content: space-between;
+    position: sticky;
+    top: 1rem;
+}
 
-    overflow: hidden;
+.sidenav .logo-img {
+    display: flex;
+    height: 5rem;
+    margin-left: 2rem;
+    background: linear-gradient(85deg, #8126ff, #7cefff);
+    border-radius: 10rem;
+    justify-self: flex-start;
 
 }
 
 .sidenav ul {
     display: flex;
-    font-size: 3rem;
+    width: 60%;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+    font-size: 2rem;
     list-style: none;
-    font-weight: 600;
-    align-items: center;
-
+    font-weight: 400;
 
 }
+
 .nav-btn {
-    min-width: 20rem;
-}
-.nav-btn a {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 150px;
     text-decoration: none;
-    color: var(--darker-gray);
 
 }
 
-.nav-btn li {
-    list-style: none;
+.nav-btn a {
+
+    text-decoration: none;
+    color: var(--light-gray);
+    padding: 1rem;
+}
+
+.nav-btn:hover {
+    background: linear-gradient(85deg, #8126ff, #7cefff);
+    font-weight: 600;
+    color: #8126ff;
+    border-radius: 2rem;
+
+}
+.nav-btn:hover a{
+    color: var(--dark-black);
 }
 
 
-
-.sidenav .logo-img {
-    width: 10rem;
-    flex-flow: wrap;
-
-    justify-self: flex-start;
-}
 
 @media (max-width: 800px) {
-    .sidenav {
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 1rem 0 1rem 0;
-    }
-
-    .sidenav a {
-        min-width: 35rem;
-    }
-
+   
 }
