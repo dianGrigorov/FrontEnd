@@ -3,44 +3,42 @@
 
 .sidenav {
     display: flex;
-    height: 12rem;
+    height: 8rem;
     background-color: var(--light-black);
-    justify-content:flex-end;
-    align-items: center;
-    gap: .5em;
+    justify-content: space-between;
+
     overflow: hidden;
 
 }
 
-.sidenav a {
-    min-width: 25rem;
+.sidenav ul {
+    display: flex;
     font-size: 3rem;
-    border-radius: 1rem;
-    background: #e0e0e0;
-    height: 8rem;
-    color: var(--light-black);
+    list-style: none;
     font-weight: 600;
-    box-shadow: inset 28px -28px 33px #b5b5b5,
-        inset -28px 28px 33px #ffffff;
+    align-items: center;
+
+
+}
+.nav-btn {
+    min-width: 20rem;
+}
+.nav-btn a {
     text-decoration: none;
-    text-align: center;
-   
-    padding: 1rem;
-}
-
-.sidenav a:hover {
-
-    background-color: var(--light-gray);
-    color: var(--blue);
-    font-weight: 600;
-    padding-bottom: 1rem;
-    box-shadow: 0 .2rem 3rem var(--light-black, 0.2) inset;
+    color: var(--darker-gray);
 
 }
+
+.nav-btn li {
+    list-style: none;
+}
+
+
+
 .sidenav .logo-img {
-    width: 12rem;
+    width: 10rem;
     flex-flow: wrap;
-   
+
     justify-self: flex-start;
 }
 
@@ -51,8 +49,9 @@
         height: auto;
         padding: 1rem 0 1rem 0;
     }
-        .sidenav a{
-            min-width: 35rem;
-        }
+
+    .sidenav a {
+        min-width: 35rem;
+    }
 
 }
