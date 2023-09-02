@@ -11,10 +11,9 @@
 
 .sidenav .logo-img {
     display: flex;
-    height: 5rem;
+    height: 6rem;
     margin-left: 2rem;
-    background: linear-gradient(85deg, #8126ff, #7cefff);
-    border-radius: 10rem;
+    
     justify-self: flex-start;
 }
 
