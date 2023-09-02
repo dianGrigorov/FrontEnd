@@ -16,7 +16,6 @@
     background: linear-gradient(85deg, #8126ff, #7cefff);
     border-radius: 10rem;
     justify-self: flex-start;
-
 }
 
 .sidenav ul {
@@ -28,16 +27,14 @@
     font-size: 2rem;
     list-style: none;
     font-weight: 400;
-
 }
 
 .nav-btn {
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    min-width: 150px;
+    min-width: 100px;
     text-decoration: none;
-
 }
 
 .nav-btn a {
@@ -57,7 +54,6 @@
 .nav-btn:hover a{
     color: var(--dark-black);
 }
-
 
 
 @media (max-width: 800px) {
