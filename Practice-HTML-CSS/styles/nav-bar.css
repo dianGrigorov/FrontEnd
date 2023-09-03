@@ -6,7 +6,7 @@
     background-color: var(--light-black);
     justify-content: space-between;
     position: sticky;
-    top: 1rem;
+    top: 0;
 }
 
 .sidenav .logo-img {
