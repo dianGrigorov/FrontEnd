@@ -9,6 +9,7 @@
     align-items: center;
     width: 100%;
     padding: 2rem 8%;
+    background-color: var(--bg-color);
 }
 
 .logo {
@@ -21,7 +22,7 @@
     font-size: 2rem;
     color: var(--text-color);
     margin-left: 4rem;
-
+    transition: .5s;
 }
 
 .navbar a:hover,
@@ -32,4 +33,105 @@
 #menu-icon {
     font-size: 3.5rem;
     display: none;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.3rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.bx-image {
+    font-size: 20rem;
+    padding: 4rem;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin-left: 2rem;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--second-bg-color);
+}
+
+.heading {
+
+    font-size: 4.2rem;
+}
+
+.about-content h3 {
+    font-size: 3.2rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.skills h2{
+   text-align: center;
+}
+.skills-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 10rem;
+    color: var(--main-color);
+   
+
+}
+
+.skills-section .bx {
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    background-color: var(--second-bg-color);
 }

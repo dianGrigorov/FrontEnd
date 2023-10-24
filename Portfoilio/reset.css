@@ -19,10 +19,13 @@ body {
     color: var(--text-color);
  
 }
-
+section{
+    min-height: 100vh;
+    padding: 6rem 8%
+}
 :root {
-    --bg-color: #041C32;
-    --second-bg-color: #064663;
+    --bg-color: #232931;
+    --second-bg-color: #393E46;
     --text-color: #fff;
     --main-color: #38E54D;
 }
