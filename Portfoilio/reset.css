@@ -15,12 +15,14 @@ html {
 }
 
 body {
-    background-color: var(--bg-color)
+    background-color: var(--bg-color);
+    color: var(--text-color);
+ 
 }
 
 :root {
     --bg-color: #041C32;
     --second-bg-color: #064663;
     --text-color: #fff;
-    --main-color: #C6DE41;
+    --main-color: #38E54D;
 }
