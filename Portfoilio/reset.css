@@ -3,7 +3,10 @@
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -12,6 +15,12 @@ html {
 }
 
 body {
-    box-sizing: border-box;
-    background-color: #334756;
+    background-color: var(--bg-color)
+}
+
+:root {
+    --bg-color: #041C32;
+    --second-bg-color: #064663;
+    --text-color: #fff;
+    --main-color: #C6DE41;
 }
