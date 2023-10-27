@@ -10,6 +10,7 @@
     width: 100%;
     padding: 2rem 8%;
     background-color: var(--bg-color);
+    z-index: 1;
 }
 
 .logo {
@@ -23,6 +24,7 @@
     color: var(--text-color);
     margin-left: 4rem;
     transition: .5s;
+    
 }
 
 .navbar a:hover,
@@ -140,14 +142,12 @@ span {
     font-size: 4vw;
     color: var(--main-color);
 
-
 }
 
 .skills-section .bx {
     border: .2rem solid var(--main-color);
     border-radius: 50%;
     padding: 1rem;
-   
     background-color: var(--second-bg-color);
     transition: .5s;
 }
@@ -157,6 +157,7 @@ span {
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
 }
+/* Portfolio section*/
 
 .portfolio {
     background: linear-gradient(180deg, rgba(57, 62, 70, 1) 10%, rgba(35, 41, 49, 1) 80%);
@@ -233,4 +234,54 @@ span {
 .portfolio-layer a i {
     font-size: 2rem;
     color: var(--bg-color);
+}
+/* Contact section */
+
+.contact h2{
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70vw;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+    border: none;
+    box-shadow: 0 0 1rem var(--second-bg-color);
+}
+.contact form .input-box input{
+    width: 49%;
+}
+.contact form textarea{
+    resize: none;
+}
+.contact form .btn{
+    background-color: var(--main-color);
+    border: none;
+    padding: 1rem 4rem;
+    border-radius: 10rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    box-shadow: 0 0 1rem var(--main-color);
+    cursor: pointer;
+    transition: .5s ease;
+}
+.contact form .btn:hover{
+    box-shadow: none;
 }
