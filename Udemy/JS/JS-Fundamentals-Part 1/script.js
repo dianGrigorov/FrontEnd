@@ -26,4 +26,18 @@ console.log(averagePopulation > population);
 
 const description = "Portugal is in Europe, and its 11 million people speak portuguese";
 console.log(description);
+
+const MarkWeight = 78;
+const MarkHeight = 1.69;
+
+const JohnWeight = 92;
+const JohnHeight = 1.95;
+
+const MarkBmi = MarkWeight / (MarkHeight * MarkHeight);
+const JohnBmi = JohnWeight / (MarkHeight * MarkHeight);
+
+const markHigherBMI = MarkBmi > JohnBmi;
+
+console.log(MarkBmi, JohnBmi);
+console.log(markHigherBMI);
  */
