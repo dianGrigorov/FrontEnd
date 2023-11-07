@@ -40,4 +40,13 @@ const markHigherBMI = MarkBmi > JohnBmi;
 
 console.log(MarkBmi, JohnBmi);
 console.log(markHigherBMI);
+
+
+const firstName = `Dian`;
+const currYear = `2023`;
+const birthYear = `1986`;
+
+const result = `Hi, I'm ${firstName}, a ${currYear - birthYear} years old!`;
+
+console.log(result);
  */
