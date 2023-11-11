@@ -153,5 +153,6 @@ const dido = {
 };
 
 console.log(dido.job);
-        
+const challenge = `${dido.firstName} has ${dido.friends.length} friends, and his best friend is called ${dido.friends[0]}`;    
+console.log(challenge);     
         
