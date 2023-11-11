@@ -102,9 +102,12 @@ const checkWinner = function (scoreDolphins, scoreKoalas) {
 }
 checkWinner(scoreDolphins, scoreKoalas);
 
+        // Arrays
+
 const friends = [`Dido`, `Mitko`, `Gosho`];
 
 // Add elements to array
+
 friends.push(`Pavel`); // add to the end of the array!
 friends.unshift(`Kaloyan`); // ass to the beginning of the array!
 
@@ -117,5 +120,38 @@ friends.shift(); //remove the first element from the array
 
 friends.includes(`Kalayan`);
 
-*/
+         // Challenge 2
 
+const calcTip = function (bill) {
+   return bill >= 50 && bill <= 300 ? bill * .15 : bill * .20;
+}
+const bills = [125, 555, 44];
+const tips = [];
+const total = [];
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]))
+}
+for (let i = 0; i < bills.length; i++) {
+
+    total.push(bills[i] + tips[i]);
+    
+}
+console.log(bills);
+console.log(tips);
+console.log(total);
+
+*/
+        //Objects
+
+const dido = {
+    firstName: `Dian`,
+    lastName: `Grigorov`,
+    age: 38,
+    job: `developer`,
+    friends: [`Kaloyan`, `Dimitur`, `Pavel`]
+};
+
+console.log(dido.job);
+        
+        
