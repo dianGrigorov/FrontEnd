@@ -101,4 +101,21 @@ const checkWinner = function (scoreDolphins, scoreKoalas) {
     }
 }
 checkWinner(scoreDolphins, scoreKoalas);
+
+const friends = [`Dido`, `Mitko`, `Gosho`];
+
+// Add elements to array
+friends.push(`Pavel`); // add to the end of the array!
+friends.unshift(`Kaloyan`); // ass to the beginning of the array!
+
+// Remove elements from the array
+
+friends.pop(); // remove the last element from the array, return removed element
+friends.shift(); //remove the first element from the array
+
+// Checks if such element exist return true or false
+
+friends.includes(`Kalayan`);
+
 */
+
