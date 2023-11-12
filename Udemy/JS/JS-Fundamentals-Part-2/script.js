@@ -155,5 +155,36 @@ const dido = {
 console.log(dido.job);
 const challenge = `${dido.firstName} has ${dido.friends.length} friends, and his best friend is called ${dido.friends[0]}`;    
 console.log(challenge);     
+
+ 
+const dido = {
+    firstName: `Dian`,
+    lastName: `Grigorov`,
+    birthYear: 1986,
+    job: `developer`,
+    friends: [`Kaloyan`, `Dimitur`, `Pavel`],
+    hasDriveLicense: false,
+
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+    // calcAge: function () {
+    //     return 2037 - this.birthYear;
+    // }
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    fetchInfo: function () {
+        return`${this.firstName} is a ${this.calcAge()}-years old ${this.job}, and he has ${this.hasDriveLicense ? 'a' : 'no'} driver's license`;
+        
+    }
+};
+console.log(dido.calcAge());
+console.log(dido.fetchInfo());
+
 */ 
+            // Challenge 3
        
+            
