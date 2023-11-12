@@ -238,4 +238,17 @@ for (let i = 0; i < dido.length; i++) {
 }
 console.log(newArr);
 
+
+
+const years = [1991, 2007, 1965, 2020];
+let sum = 0;
+for (let i = years.length - 1; i >= 0; i--) {
+ console.log(i, years[i]);
+}
 */
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`You rolled  a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
