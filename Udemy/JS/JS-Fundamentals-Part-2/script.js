@@ -213,4 +213,29 @@ console.log(mark.calcBMI() > john.calcBMI()
 ? `${mark.fullName}'s BMI (${mark.calcBMI()}) is higher than ${john.fullName}'s (${john.calcBMI()})!` 
 : `${john.fullName}'s BMI (${john.calcBMI()}) is higher than ${mark.fullName}'s (${mark.calcBMI()})!`);
 
-*/ 
+
+
+            //Loops
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+const dido = [
+    'dido',
+    'gosho',
+    'sasho',
+    'asen',
+    10,
+    true
+]
+
+const newArr = [];
+for (let i = 0; i < dido.length; i++) {
+    console.log(dido[i], typeof dido[i]);
+    newArr.push(typeof dido[i])
+
+}
+console.log(newArr);
+
+*/
