@@ -245,10 +245,33 @@ let sum = 0;
 for (let i = years.length - 1; i >= 0; i--) {
  console.log(i, years[i]);
 }
-*/
+
 let dice = Math.trunc(Math.random() * 6) + 1;
 
 while (dice !== 6) {
     console.log(`You rolled  a ${dice}`);
     dice = Math.trunc(Math.random() * 6) + 1;
 }
+
+
+// Challenge 4
+
+const calcTip = (bill) => {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(bills[i] + tips[i])
+}
+
+// compute average sum in the array
+const calcAverage = (arr) => {
+    return arr.reduce((a, b) => a + b, 0) / arr.length
+}
+
+console.log(calcAverage(totals));
+*/
