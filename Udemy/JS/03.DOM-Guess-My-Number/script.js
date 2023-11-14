@@ -15,7 +15,7 @@ let score = 20;
 let highScore = 0;
 
 const displayMessage = function (message) {
-    document.querySelector('.number').textContent = message;
+    document.querySelector('.message').textContent = message;
 }
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -50,7 +50,7 @@ document.querySelector('.check').addEventListener('click', function () {
             document.querySelector('.score').textContent = score;
         }
         // When the guess is too low
-        else {
+        else if (score === 1){
             // document.querySelector('.message').textContent = '💥 You lose the game!';
             displayMessage('💥 You lose the game!');
             score--;
@@ -66,7 +66,7 @@ document.querySelector('.again').addEventListener('click', function () {
 
     // document.querySelector('.message').textContent = 'Start guessing...'
     displayMessage('Start guessing...');
-    
+
     document.querySelector('.score').textContent = score;
     document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.number').textContent = '?';
