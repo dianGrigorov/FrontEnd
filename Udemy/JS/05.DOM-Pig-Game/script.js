@@ -32,7 +32,7 @@ const init = function () {
 
     diceElement.classList.add('hidden');
     player0Element.classList.remove('player--winner');
-    
+
     player1Element.classList.remove('player--winner');
     player0Element.classList.add('player--active');
     player1Element.classList.remove('player--active');
@@ -92,4 +92,4 @@ btnHold.addEventListener('click', function () {
     }
 });
 
-btnNew.addEventListener('click', init)
+btnNew.addEventListener('click', init);
