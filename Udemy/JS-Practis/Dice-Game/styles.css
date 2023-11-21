@@ -91,7 +91,9 @@ main {
     cursor: pointer;
     position: absolute;
     box-shadow: .3rem .3rem .5rem black;
-    transition: .3s;
+    transition: all .2s;
+  display: flex;
+  
 }
 
 .btn--rules {
@@ -107,19 +109,36 @@ main {
 }
 .btn--roll {
     right: 50%;
-    bottom: 30%;
-    transform: translateX(50%);
+    bottom: 25%;
+    transform: translate(50%);
 }
 .btn--hold {
     right: 50%;
-    bottom: 20%;
-    transform: translateX(50%);
+    bottom: 15%;
+    transform: translate(50%);
 }
-.btn:hover {
-    transform: scale(1.05);
+.btn--rules:active, .btn--new:active {
+    transform: translate(0, 3px);
+        box-shadow: .1rem .1rem .5rem red;
 }
 
-.btn:active {
-    transform: translateY(1px);
+.btn--roll:active, .btn--hold:active {
+    transform: translate(50%, 3px);
     box-shadow: .1rem .1rem .5rem red;
+}
+.btn:focus {
+    outline: none;
+}
+.btn img {
+
+    padding-right: 1rem;
+}
+.dice {
+
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
