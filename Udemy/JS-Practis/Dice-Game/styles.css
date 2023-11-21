@@ -30,9 +30,10 @@ main {
     border-radius: 20px;
     height: 60vh;
     width: 90vw;
-    box-shadow: 1.5rem 1.5rem 1.5rem #3BB8F0;
+    box-shadow: 1rem 1rem 1.5rem #3BB8F0;
     overflow: hidden;
 }
+
 .player {
     display: flex;
     justify-content: space-evenly;
@@ -52,7 +53,7 @@ main {
 
 .player :nth-child(2) {
     font-size: 7rem;
-    
+
 }
 
 .current {
@@ -78,4 +79,47 @@ main {
 
 .active {
     background-color: #282a369f;
+}
+
+.btn {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    padding: .5rem 2rem;
+    border-radius: 10rem;
+    background-color: #3BB8F0;
+    cursor: pointer;
+    position: absolute;
+    box-shadow: .3rem .3rem .5rem black;
+    transition: .3s;
+}
+
+.btn--rules {
+
+    top: 2rem;
+    left: 2rem;
+}
+
+.btn--new {
+
+    top: 2rem;
+    right: 2rem;
+}
+.btn--roll {
+    right: 50%;
+    bottom: 30%;
+    transform: translateX(50%);
+}
+.btn--hold {
+    right: 50%;
+    bottom: 20%;
+    transform: translateX(50%);
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: .1rem .1rem .5rem red;
 }

@@ -5,27 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Dice Game</title>
 </head>
 
 <body>
     <main>
+        <button class=" btn btn--rules">Rules</button>
+        <button class=" btn btn--new">New Game</button>
         <section class="player player--0 active">
             <h1>Player 1</h1>
             <p class="totalScore--0">24</p>
             <div class="current">
-            <p class="currScore--0">current</p>
-            <p>0</p>
+            <p>current</p>
+            <p class="currScore--0">0</p>
             </div>
         </section>
         <section class="player player--1 ">
             <h1>Player 2</h1>
-            <p class="totalScore--0">42</p>
+            <p class="totalScore--1">42</p>
             <div class="current">
-                <p class="currScore--0">current</p>
-                <p>0</p>
+                <p>current</p>
+                <p class="currScore--1">0</p>
             </div>
         </section>
+        <button class=" btn btn--roll">Roll</button>
+        <button class=" btn btn--hold">Hold</button>
     </main>
     <script src="script.js"></script>
 </body>
