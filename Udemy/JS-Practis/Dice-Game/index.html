@@ -9,19 +9,42 @@
 </head>
 
 <body>
+    <div class="show-modal hidden">
+        <div>
+            <h1>Rules <span>!</span></h1>
+            <button class="close-modal">&times;</button>
+        </div>
+
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores similique, itaque a quisquam quod explicabo
+            dicta nostrum ullam corrupti eum suscipit ipsam numquam molestias, sapiente facilis magnam asperiores
+            ratione
+            fugiat ut voluptate! Tempore, consequuntur repudiandae consequatur pariatur facere culpa ut quia
+            voluptatibus
+            rem quaerat iure vitae quis expedita saepe cum?Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Maiores similique, itaque a quisquam quod explicabo
+            dicta nostrum ullam corrupti eum suscipit ipsam numquam molestias, sapiente facilis magnam asperiores
+            ratione
+            fugiat ut voluptate! Tempore, consequuntur repudiandae consequatur pariatur facere culpa ut quia
+            voluptatibus
+            rem quaerat iure vitae quis expedita saepe cum?</p>
+    </div>
+    <div class="overlay hidden"></div>
     <main>
+
         <button class=" btn btn--rules">
             <img src="./src/journal.svg" alt="">
             Rules</button>
         <button class=" btn btn--new">
             <img src="./src/controller.svg" alt="">
             New Game</button>
+
         <section class="player player--0 active">
             <h1>Player 1</h1>
             <p class="totalScore--0">24</p>
             <div class="current">
-            <p>current</p>
-            <p class="currScore--0">0</p>
+                <p>current</p>
+                <p class="currScore--0">0</p>
             </div>
         </section>
         <section class="player player--1 ">
@@ -32,13 +55,14 @@
                 <p class="currScore--1">0</p>
             </div>
         </section>
-        <img src="./src/dice--5.png" alt="dices" class="dice">
+        <img src="./src/dice--0.png" alt="dices" class="dice">
         <button class=" btn btn--roll">
             <img src="./src/dice-6.svg" alt="">
             Roll</button>
         <button class=" btn btn--hold">
-            <img src="./src//database-lock.svg" alt="">
+            <img src="./src/database-lock.svg" alt="">
             Hold</button>
+
     </main>
     <script src="script.js"></script>
 </body>

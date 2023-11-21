@@ -14,7 +14,7 @@ html {
 }
 
 body {
-    background-color: #282A36;
+    background-color:  #282A36;
     height: 100vh;
     font-weight: 400;
     color: #3BB8F0;
@@ -32,6 +32,7 @@ main {
     width: 90vw;
     box-shadow: 1rem 1rem 1.5rem #3BB8F0;
     overflow: hidden;
+    border: 2px solid #3BB8F0;
 }
 
 .player {
@@ -84,6 +85,7 @@ main {
 .btn {
     font-size: 1.5rem;
     font-weight: 600;
+    color: #FF008E;
     border: none;
     padding: .5rem 2rem;
     border-radius: 10rem;
@@ -92,8 +94,8 @@ main {
     position: absolute;
     box-shadow: .3rem .3rem .5rem black;
     transition: all .2s;
-  display: flex;
-  
+    display: flex;
+
 }
 
 .btn--rules {
@@ -107,32 +109,40 @@ main {
     top: 2rem;
     right: 2rem;
 }
+
 .btn--roll {
     right: 50%;
     bottom: 25%;
     transform: translate(50%);
 }
+
 .btn--hold {
     right: 50%;
     bottom: 15%;
     transform: translate(50%);
 }
-.btn--rules:active, .btn--new:active {
+
+.btn--rules:active,
+.btn--new:active {
     transform: translate(0, 3px);
-        box-shadow: .1rem .1rem .5rem red;
+    box-shadow: .1rem .1rem .5rem #FF008E;
 }
 
-.btn--roll:active, .btn--hold:active {
+.btn--roll:active,
+.btn--hold:active {
     transform: translate(50%, 3px);
-    box-shadow: .1rem .1rem .5rem red;
+    box-shadow: .1rem .1rem .5rem #FF008E;
 }
+
 .btn:focus {
     outline: none;
 }
+
 .btn img {
 
     padding-right: 1rem;
 }
+
 .dice {
 
     width: 150px;
@@ -141,4 +151,52 @@ main {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.show-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #282A36;
+    border-radius: 10px;
+    box-shadow: 1rem 1rem 1rem #FF008E;
+    z-index: 2;
+    padding: 10px;
+    border: 2px solid #3BB8F0;
+
+}
+
+.show-modal div {
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    font-size: 2rem;
+
+}
+
+.show-modal span {
+    color: #FF008E;
+}
+
+.close-modal {
+    font-size: 3rem;
+    border: none;
+    color: #FF008E;
+    background-color: #282A36;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+background-color: #3bb7f06e;
+backdrop-filter: blur(3px);
+z-index: 1;
 }
