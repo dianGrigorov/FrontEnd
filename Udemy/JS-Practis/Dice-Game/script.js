@@ -10,7 +10,10 @@ const totalScore0El = document.querySelector('.totalScore--0');
 const totalScore1El = document.querySelector('.totalScore--1');
 const currScore0El = document.querySelector('.currScore--0');
 const currScore1El = document.querySelector('.currScore--1');
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
 
+const diceEl = document.querySelector('.dice');
 // rules modal selections
 const modal = document.querySelector('.show-modal');
 const closeModal = document.querySelector('.close-modal');
@@ -30,13 +33,27 @@ function init() {
     totalScore1El.textContent = 0;
     currScore0El.textContent = 0;
     currScore1El.textContent = 0;
-
+    player0El.classList.add('active')
+    player1El.classList.remove('active')
+    player0El.classList.remove('winner');
+    player1El.classList.remove('winner');
 };
 
 // setting initial values
 init();
 
+// switching the players
+console.log(activePlayer);
+const switchPlayer = () => {
+    document.querySelector(`.currScore--${activePlayer}`).textContent = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    currScore = 0;
+    console.log();
+    player0El.classList.toggle('active');
+    player1El.classList.toggle('active');
+    
 
+};
 // show Rules modal or remove it
 
 const addRemoveModal = () => {
@@ -57,3 +74,41 @@ document.addEventListener('keydown', function (e) {
         addRemoveModal();
     }
 });
+
+// rolling the dice
+
+btnRoll.addEventListener('click', function () {
+    if(playing) {
+
+   
+    const dice = Math.trunc(Math.random() * 6 + 1);
+
+    diceEl.src = `./src/dice--${dice}.png`;
+    if (dice > 1) {
+        currScore += dice;
+        document.querySelector(`.currScore--${activePlayer}`).textContent = currScore;
+
+    } else {
+        switchPlayer();
+    }
+    }
+});
+// hold button
+
+btnHold.addEventListener('click', function () {
+    if (playing) {
+
+        totalScores[activePlayer] += currScore;
+        document.querySelector(`.totalScore--${activePlayer}`).textContent = totalScores[activePlayer];
+
+        if (totalScores[activePlayer] >= 20) {
+            playing = false;
+            document.querySelector(`.player--${activePlayer}`).classList.add('winner');
+        } else {
+            switchPlayer();
+        }
+    }
+});
+
+btnNew.addEventListener('click', init);
+

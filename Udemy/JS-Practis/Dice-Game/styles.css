@@ -200,3 +200,6 @@ background-color: #3bb7f06e;
 backdrop-filter: blur(3px);
 z-index: 1;
 }
+.winner {
+    background-color: red;
+}
