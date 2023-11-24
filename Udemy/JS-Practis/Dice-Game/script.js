@@ -37,6 +37,8 @@ function init() {
     player1El.classList.remove('active')
     player0El.classList.remove('winner');
     player1El.classList.remove('winner');
+
+    diceEl.src = `./src/dice--0.png`;
 };
 
 // setting initial values
@@ -101,9 +103,10 @@ btnHold.addEventListener('click', function () {
         totalScores[activePlayer] += currScore;
         document.querySelector(`.totalScore--${activePlayer}`).textContent = totalScores[activePlayer];
 
-        if (totalScores[activePlayer] >= 20) {
+        if (totalScores[activePlayer] >= 100) {
             playing = false;
             document.querySelector(`.player--${activePlayer}`).classList.add('winner');
+            diceEl.src = `./src/dice--0.png`;
         } else {
             switchPlayer();
         }
