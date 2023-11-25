@@ -37,7 +37,13 @@ const restaurant = {
 // const [a, b] = restaurant.categories;
 // console.log(a, b);
 
-const [a, , b] = restaurant.mainMenu;
-console.log(a, b);
-const [menu, category] = restaurant.order(0, 2);
-console.log(menu, category);
+// const [a, , b] = restaurant.mainMenu;
+// console.log(a, b);
+// const [menu, category] = restaurant.order(0, 2);
+// console.log(menu, category);
+
+// const [a, , , , b = 5] = restaurant.starterMenu;
+// console.log(a, b);
+
+// const [a, , [b, c]] = [1, 2, [3, 4]];
+// console.log(a, b, c);
