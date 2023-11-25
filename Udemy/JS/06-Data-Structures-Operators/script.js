@@ -26,4 +26,18 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (menuIndex, categoriesIndex) {
+    return [this.mainMenu[menuIndex], this.categories[categoriesIndex]]
+  }
 };
+
+// Destructing arrays
+
+// const [a, b] = restaurant.categories;
+// console.log(a, b);
+
+const [a, , b] = restaurant.mainMenu;
+console.log(a, b);
+const [menu, category] = restaurant.order(0, 2);
+console.log(menu, category);
