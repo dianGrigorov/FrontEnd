@@ -33,6 +33,14 @@ const restaurant = {
 };
 
 
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+// for (const item of menu.entries()) console.log(item);
+
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el} `);
+// }
+
 // const game = {
 //   team1: 'Bayern Munich',
 //   team2: 'Borrussia Dortmund',
