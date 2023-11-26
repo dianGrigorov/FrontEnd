@@ -32,6 +32,23 @@ const restaurant = {
   }
 };
 
+const rest1 = {
+  name: `Dunavski`,
+  numGest: 20,
+};
+
+const rest2 = {
+  name: `Ribarska`,
+  owner: `Anton`,
+};
+//OR assignment operator 
+// rest1.numGest = rest1.numGest || 10;
+// rest2.numGest = rest2.numGest || 10;
+
+rest1.numGest ||= 10;
+rest2.numGest ||= 10;
+console.log(rest1);
+console.log(rest2);
 // Destructing arrays
 
 // const [a, b] = restaurant.categories;
