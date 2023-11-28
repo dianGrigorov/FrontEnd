@@ -32,7 +32,9 @@ const restaurant = {
   }
 };
 
-
+// Optional chaining 
+// console.log(restaurant.openingHours.fri.open);
+// console.log(restaurant.openingHours.mon?.open);
 // const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
 // for (const item of menu.entries()) console.log(item);
