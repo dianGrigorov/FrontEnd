@@ -4,73 +4,157 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-// Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+// Challenge #2
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+    'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
   },
-
-  order: function (menuIndex, categoriesIndex) {
-    return [this.mainMenu[menuIndex], this.categories[categoriesIndex]]
-  }
 };
 
-const openingHour = {
-  thu: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
+//Task 1
+// Loop over the game.scored array and print each player name to the console,
+// along with the goal number(Example: "Goal 1: Lewandowski")
+const x = game.scored;
+console.log(x);
+for (const [goal , name] of game.scored.entries()) {
+  
+  console.log(`Goal ${goal + 1}: ${name}`);
 }
+
+// Task 2 
+// Use a loop to calculate the average odd and log it to the console (We already
+// studied how to calculate averages, you can go check if you don't remember)
+
+let total = 0;
+const odd = Object.entries(game.odds);
+console.log(odd);
+for (const [ ,value] of odd) {
+  console.log(value);
+  total += value;
+}
+console.log(`The average ODD is ${total / odd.length}`);
+
+//Task 3 
+// Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+// Odd of victory Bayern Munich: 1.33
+// Odd of draw: 3.25
+// Odd of victory Borrussia Dortmund: 6.5
+// Get the team names directly from the game object, don't hardcode them
+//   (except for "draw").Hint: Note how the odds and the game objects have the
+// same property names 😉
+
+for (const [team, score] of odd) {
+  
+  const value = game[team];
+
+  const str = value ? `Odd of victory ${value}: ${score}` : `Odd of draw: ${score}`;
+  console.log(str);
+}
+
+// Data needed for first part of the section
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+
+//   order: function (menuIndex, categoriesIndex) {
+//     return [this.mainMenu[menuIndex], this.categories[categoriesIndex]]
+//   }
+// };
+
+// const openingHour = {
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// }
 
 // FOR OF LOOPS ON OBJECTS
 // Property NAMES
 
-const prop = Object.keys(openingHour);
+// const prop = Object.keys(openingHour);
 
-let open = `We are open on ${prop.length} days `;
-console.log(prop);
-for (const day of prop) {
-  open +=` ${day}, `;
-}
-console.log(open);
-
-
-// Property VALUES 
-const values = Object.values(openingHour);
-console.log(values);
+// let open = `We are open on ${prop.length} days `;
+// console.log(prop);
+// for (const day of prop) {
+//   open +=` ${day}, `;
+// }
+// console.log(open);
 
 
-const entries = Object.entries(openingHour);
-console.log(entries);
+// // Property VALUES 
+// const values = Object.values(openingHour);
+// console.log(values);
 
-for (const [day, {open, close}] of entries) {
-console.log(`On ${day} we are open at ${open} and close at ${close}!`);
-}
+
+// const entries = Object.entries(openingHour);
+// console.log(entries);
+
+// for (const [day, {open, close}] of entries) {
+// console.log(`On ${day} we are open at ${open} and close at ${close}!`);
+// }
 // Optional chaining 
 // console.log(restaurant.openingHours.fri.open);
 // console.log(restaurant.openingHours.mon?.open);
