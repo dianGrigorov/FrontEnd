@@ -4,72 +4,103 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+// SETS
+
+// const orderSet = new Set([
+//   'Pasta',
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Risotto',
+// ]);
+// console.log(orderSet);
+// console.log(new Set('Dido'));
+
+// console.log(orderSet.size);
+// console.log(orderSet.has('Pizza'));
+// console.log(orderSet.has('Bread'));
+// console.log(orderSet.add('Bread'));
+// console.log(orderSet.add('Bread'));
+// console.log(orderSet.delete('Bread')); 
+// console.log(orderSet);
+
+// for (const order of orderSet) {
+//   console.log(order);
+// }
+
+
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef'];
+// const staffUnique = [...new Set(staff)];
+// console.log(typeof(staff));
+
+// console.log(staffUnique);
 // Challenge #2
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
-    'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski',
+//     'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
 //Task 1
 // Loop over the game.scored array and print each player name to the console,
 // along with the goal number(Example: "Goal 1: Lewandowski")
-const x = game.scored;
-console.log(x);
-for (const [goal , name] of game.scored.entries()) {
+// const x = game.scored;
+// console.log(x);
+// for (const [goal , name] of game.scored.entries()) {
   
-  console.log(`Goal ${goal + 1}: ${name}`);
-}
+//   console.log(`Goal ${goal + 1}: ${name}`);
+// }
 
 // Task 2 
 // Use a loop to calculate the average odd and log it to the console (We already
 // studied how to calculate averages, you can go check if you don't remember)
 
-let total = 0;
-const odd = Object.entries(game.odds);
-console.log(odd);
-for (const [ ,value] of odd) {
-  console.log(value);
-  total += value;
-}
-console.log(`The average ODD is ${total / odd.length}`);
+// let total = 0;
+// const odd = Object.entries(game.odds);
+// console.log(odd);
+// for (const [ ,value] of odd) {
+//   console.log(value);
+//   total += value;
+// }
+// console.log(`The average ODD is ${total / odd.length}`);
 
 //Task 3 
 // Print the 3 odds to the console, but in a nice formatted way, exactly like this:
@@ -80,13 +111,13 @@ console.log(`The average ODD is ${total / odd.length}`);
 //   (except for "draw").Hint: Note how the odds and the game objects have the
 // same property names 😉
 
-for (const [team, score] of odd) {
+// for (const [team, score] of odd) {
   
-  const value = game[team];
+//   const value = game[team];
 
-  const str = value ? `Odd of victory ${value}: ${score}` : `Odd of draw: ${score}`;
-  console.log(str);
-}
+//   const str = value ? `Odd of victory ${value}: ${score}` : `Odd of draw: ${score}`;
+//   console.log(str);
+// }
 
 // Data needed for first part of the section
 // const restaurant = {
