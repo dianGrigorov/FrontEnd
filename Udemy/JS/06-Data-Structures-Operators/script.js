@@ -76,16 +76,18 @@ const gameEvents = new Map([
   [92, '🔶 Yellow card'],
 ]);
 
-const events = [...gameEvents];
-
+const events = new Set([...gameEvents.values()]);
 
 console.log(events);
 gameEvents.delete(64);
 console.log(gameEvents);
 //Compute and log the following string to the console: 
 //"An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
-for (const [min, event] of events) {
-  console.log(`An ${event}`);
+
+console.log(`An event happened, on average, every ${90 / gameEvents.size} minutes`);
+for (const [key, event] of gameEvents) {
+  const str = key <= 45 ? `[FIRST HALF] ${key}: ${event}` : `[Second HALF] ${key}: ${event}`;
+  console.log(str);
 }
 
 //  const hoursMap = new Map(Object.entries(openingHours));
