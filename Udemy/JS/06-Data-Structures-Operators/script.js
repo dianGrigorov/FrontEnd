@@ -5,8 +5,39 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45     +_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Strings
+const airLine = 'TAP Air Portugal';
+const plane = 'A320';
 
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
 
+console.log(airLine.length);
+
+console.log(airLine.indexOf('r'));
+console.log(airLine.lastIndexOf('r'));
+console.log(airLine.indexOf('Portugal'));
+
+console.log(airLine.slice(4));
+console.log(airLine.slice(4, 7));
+
+console.log(airLine.slice(0, airLine.indexOf(' ')));
+console.log(airLine.slice(airLine.lastIndexOf(' ') + 1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if(s === 'B' || s === 'E'){
+    console.log('You got the middle seat 🤣');
+  } else {
+    console.log('You got lucky 😎');
+  }
+}
+
+checkMiddleSeat('11B');
+checkMiddleSeat('22C');
+checkMiddleSeat('22E');
+ console.log(typeof plane);
 // MAPS 
 
 // const rest = new Map();
