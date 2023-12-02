@@ -4,6 +4,8 @@
 const flights =   
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45     +_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+// Strings
+
 
 // MAPS 
 
@@ -35,60 +37,60 @@ const flights =
 
 // console.log(rest);
 
-const question = new Map ([
-[  'question', 'What is the best programming language in the word ?'],
-[1, 'C'],
-[2, 'Java'],
-[3, 'JavaScript'],
-['correct', 3],
-[true, 'Correct'],
-[false, 'Try again!']
-]);
+// const question = new Map ([
+// [  'question', 'What is the best programming language in the word ?'],
+// [1, 'C'],
+// [2, 'Java'],
+// [3, 'JavaScript'],
+// ['correct', 3],
+// [true, 'Correct'],
+// [false, 'Try again!']
+// ]);
 
-// Convert Object to Map
-const openingHours = {
-     thu: {
-       open: 12,
-       close: 22,
-     },
-     fri: {
-       open: 11,
-       close: 23,
-     },
-     sat: {
-       open: 0, // Open 24 hours
-       close: 24,
-     },
-   };
-// Coding challenge  #3
+// // Convert Object to Map
+// const openingHours = {
+//      thu: {
+//        open: 12,
+//        close: 22,
+//      },
+//      fri: {
+//        open: 11,
+//        close: 23,
+//      },
+//      sat: {
+//        open: 0, // Open 24 hours
+//        close: 24,
+//      },
+//    };
+// // Coding challenge  #3
 
-const gameEvents = new Map([
-  [17, '⚽ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽ GOAL'],
-  [80, '⚽ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// const gameEvents = new Map([
+//   [17, '⚽ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽ GOAL'],
+//   [80, '⚽ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
-const events = new Set([...gameEvents.values()]);
+// const events = new Set([...gameEvents.values()]);
 
-console.log(events);
-gameEvents.delete(64);
-console.log(gameEvents);
-//Compute and log the following string to the console: 
-//"An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+// console.log(events);
+// gameEvents.delete(64);
+// console.log(gameEvents);
+// //Compute and log the following string to the console: 
+// //"An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
 
-console.log(`An event happened, on average, every ${90 / gameEvents.size} minutes`);
-for (const [key, event] of gameEvents) {
-  const str = key <= 45 ? `[FIRST HALF] ${key}: ${event}` : `[Second HALF] ${key}: ${event}`;
-  console.log(str);
-}
+// console.log(`An event happened, on average, every ${90 / gameEvents.size} minutes`);
+// for (const [key, event] of gameEvents) {
+//   const str = key <= 45 ? `[FIRST HALF] ${key}: ${event}` : `[Second HALF] ${key}: ${event}`;
+//   console.log(str);
+// }
 
 //  const hoursMap = new Map(Object.entries(openingHours));
  
