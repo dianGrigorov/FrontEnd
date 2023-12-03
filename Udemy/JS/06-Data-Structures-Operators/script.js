@@ -37,8 +37,9 @@ console.log(normalizedEmail);
 const priceGB = '28888,97$';
 const priceBGN = priceGB.replace('$', 'BGN').replace(',', '.').replaceAll('8', '7');
 
-
 console.log(priceBGN);
+
+
 // const airLine = 'TAP Air Portugal';
 // const plane = 'A320';
 
