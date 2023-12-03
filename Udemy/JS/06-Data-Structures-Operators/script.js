@@ -39,6 +39,19 @@ const priceBGN = priceGB.replace('$', 'BGN').replace(',', '.').replaceAll('8', '
 
 console.log(priceBGN);
 
+const checkBaggage = function (items) {
+const baggage = items.toLowerCase();
+if(baggage.includes('knife') || baggage.includes('gun')){
+  console.log('You are not allowed on board!');
+} else {
+  console.log('Welcome aboard!');
+}
+
+};
+
+checkBaggage('I have a laptop, some food and pocket Knife.');
+checkBaggage('I have a gUn');
+checkBaggage('i have Socks and camera')
 
 // const airLine = 'TAP Air Portugal';
 // const plane = 'A320';
