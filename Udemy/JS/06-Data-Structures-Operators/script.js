@@ -4,37 +4,72 @@
 const flights =   
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45     +_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+  for (const flight of flights.split('+')) {
+    const [type, from, to, time] = flight.split(';')
+    const output = `${type.startsWith('_Delayed') ? '⛔' : ''}${type.replaceAll('_', ' ')} ${from.slice(0, 3).toUpperCase()} to ${to.slice(0, 3).toUpperCase()} ${time.replace(':', 'h')}`.trimEnd().padStart(39);
+    console.log(output);
+    console.log(output.length);
+  }
+ 
+/*
+underscore_case
+  first_name
+Some_Variable
+  calculate_AGE
+delayed_departure
+*/
 // document.body.append(document.createElement('textarea'));
 // document.body.append(document.createElement('button'));
 
-// const text = document.getElementsByTagName('textarea');
-// const btn = document.getElementsByTagName('button');
 
-// console.log(text);
-// console.log(btn);
-
-// const convertedText = () => {
-//   const text1 = text.value;
-  
-//   console.log(text1);
-// };
-
-// text.addEventListener
-// btn.addEventListener('click', convertedText);
+// document.querySelector('button', addEventListener('click', function(){
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+ 
+//   for (const [i, el] of rows.entries()) {
+//     const [first, second] = el.trim().toLowerCase().split('_');
+//    const finalStr = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+ 
+//    console.log(`${finalStr.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+ 
+// }))
 
 // Strings
 
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
-  for (const n of names) {
-    namesUpper.push(n[0].toUpperCase() + n.slice(1));
-  }
-  console.log(namesUpper.join(' '));
-};
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+//   for (const n of names) {
+//     //namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
 
-capitalizeName('dian rumenov grigorov')
+// capitalizeName('dian rumenov grigorov')
 
+
+// // Padding string
+
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(20, '+').padEnd(35, '-'));
+// console.log('Dido'.padStart(20, '-').padEnd(35, '-'));
+
+
+// const maskCreditCard = (number) => {
+//   const str = number + '';
+//   const last = str.slice(-4);
+
+//   return last.padStart(str.length, '*')
+// }
+
+// console.log(maskCreditCard(1111222233334444));
+
+// // Repeat
+// const message2 = 'Bad weather... all departure delayed... ';
+
+// console.log(message2.repeat(5));
 // const airLine = 'TAP Air Portugal';
 
 // console.log(airLine.toLowerCase());
