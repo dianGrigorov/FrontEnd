@@ -40,25 +40,42 @@
 
 // checkIn(flight, jonas);
 
-const oneWord = function (str) {
+// const oneWord = function (str) {
 
-    return str.replaceAll(' ', '').toLowerCase();
+//     return str.replaceAll(' ', '').toLowerCase();
+// }
+
+// const upperFirstWord = function (str) {
+//     const [first, ...others] = str.split(' ');
+//     return [first.toUpperCase(), ...others].join(' ');
+// }
+
+// // Higher-order Function
+
+// const transformer = function (str, fn) {
+//     console.log(`Original string; ${str}`);
+//     console.log(`Transformed string: ${fn(str)}`);
+
+//     console.log(`Transformed by: ${fn.name}`);
+// }
+
+// transformer('JavaScript is the best!', upperFirstWord)
+// transformer('JavaScript is the best!', oneWord)
+// console.log(oneWord('dido dido'));
+
+const greet = function (greeting) {
+    return function (name){
+        console.log(`${greeting} ${name}`);
+    }
 }
 
-const upperFirstWord = function (str) {
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
-}
+const greeterHey = greet('Hey');
 
-// Higher-order Function
+greeterHey('Dido');
+greeterHey('Jonas');
 
-const transformer = function (str, fn) {
-    console.log(`Original string; ${str}`);
-    console.log(`Transformed string: ${fn(str)}`);
+greet('Hello')('Dido');
 
-    console.log(`Transformed by: ${fn.name}`);
-}
+const newGreet = greeting => names => console.log(`${greeting} ${names}`);
 
-transformer('JavaScript is the best!', upperFirstWord)
-transformer('JavaScript is the best!', oneWord)
-console.log(oneWord('dido dido'));
+newGreet('Best regards')('Alex')
