@@ -63,19 +63,31 @@
 // transformer('JavaScript is the best!', oneWord)
 // console.log(oneWord('dido dido'));
 
-const greet = function (greeting) {
-    return function (name){
-        console.log(`${greeting} ${name}`);
+// const greet = function (greeting) {
+//     return function (name){
+//         console.log(`${greeting} ${name}`);
+//     }
+// }
+
+// const greeterHey = greet('Hey');
+
+// greeterHey('Dido');
+// greeterHey('Jonas');
+
+// greet('Hello')('Dido');
+
+// const newGreet = greeting => names => console.log(`${greeting} ${names}`);
+
+// newGreet('Best regards')('Alex')
+
+const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
+
+    book (flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
     }
 }
 
-const greeterHey = greet('Hey');
-
-greeterHey('Dido');
-greeterHey('Jonas');
-
-greet('Hello')('Dido');
-
-const newGreet = greeting => names => console.log(`${greeting} ${names}`);
-
-newGreet('Best regards')('Alex')
+lufthansa.book(223, 'Dian Grigorov');
