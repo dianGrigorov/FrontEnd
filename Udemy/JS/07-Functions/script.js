@@ -87,7 +87,22 @@ const lufthansa = {
 
     book (flightNum, name) {
         console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`);
+
+        this.bookings.push({flight: `${this.iataCode}${flightNum}`, name})
     }
 }
 
 lufthansa.book(223, 'Dian Grigorov');
+console.log(lufthansa);
+
+const euroWings = {
+     airline: 'Eurowings',
+     iataCode:'EW',
+     bookings: [],
+}
+const book = lufthansa.book;
+// Does not work
+// book(23, 'John Smith');
+
+book.call(euroWings , 23 , 'John Smith');
+console.log(euroWings);
