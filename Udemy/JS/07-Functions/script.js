@@ -145,7 +145,7 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 
 console.log(addVAT2(300));
-*/
+
 
 const poll = {
     question: "What is your favourite programming language?",
@@ -194,3 +194,16 @@ document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer
 // [1, 5, 3, 9, 4]
 
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
+
+
+
+
+// Immediately Invoked Function Expressions IIFE
+// wrap the function in to brackets and immediately invoke it 
+(function () {
+    console.log('This will never run again!');
+})();
+
+*/
+
+// CLOSURES
