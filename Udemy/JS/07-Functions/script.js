@@ -80,6 +80,7 @@
 
 // newGreet('Best regards')('Alex')
 
+/*
 const lufthansa = {
     airline: 'Lufthansa',
     iataCode: 'LH',
@@ -144,3 +145,52 @@ const addTaxRate = function (rate) {
 const addVAT2 = addTaxRate(0.23);
 
 console.log(addVAT2(300));
+*/
+
+const poll = {
+    question: "What is your favourite programming language?",
+    options: ["0: JavaScript", "1: Python", "2: Rust", "3:C++"],
+    // This generates [0, 0, 0, 0]. More in the next section!
+    answers: new Array(4).fill(0),
+    registerNewAnswer() {
+        const valuePrompt = Number(prompt(`${this.question}\n ${this.options.join('\n')} \n(write you answer)`));
+        console.log(valuePrompt);
+
+        switch (valuePrompt) {
+            case 0:
+                this.answers[0]++;
+                break;
+            case 1:
+                this.answers[1]++;
+                break;
+            case 2:
+                this.answers[2]++;
+                break;
+            case 3:
+                this.answers[3]++;
+                break;
+            default:
+                alert('Please enter a valid Number!');
+                break;
+            
+        }
+        this.displayResults();
+        this.displayResults('string')
+    },
+    displayResults(type = 'array') {
+        
+        if (type === 'array') {
+            console.log(this.answers);
+        } else if (type === 'string') {
+            console.log(`Poll result are ${this.answers.join(', ')}`);
+        }
+    }
+
+};
+
+document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+// [5, 2, 3]
+// [1, 5, 3, 9, 4]
+
+poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
