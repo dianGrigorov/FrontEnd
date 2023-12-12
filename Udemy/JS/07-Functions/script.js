@@ -204,7 +204,7 @@ poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
     console.log('This will never run again!');
 })();
 
-*/
+
 
 // CLOSURES
 
@@ -227,3 +227,4 @@ const h = function () {
 g();
 f();
 console.dir(f);
+*/
