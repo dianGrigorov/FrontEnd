@@ -207,3 +207,23 @@ poll.displayResults.call({ answers: [5, 2, 3] }, 'string');
 */
 
 // CLOSURES
+
+let f;
+const g = function () {
+    const a = 23;
+    f = function () {
+        console.log(a * 2);
+    };
+};
+
+const h = function () {
+    const b = 777;
+
+    f = function () {
+        console.log(b * 2);
+    };
+}
+
+g();
+f();
+console.dir(f);
