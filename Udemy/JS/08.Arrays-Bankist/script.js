@@ -61,10 +61,29 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+
+const displayMOvements = function (movements) {
+// clear the section we chose 
+  containerMovements.innerHTML = '';
+// for each movements we make string literal to make aur html elements, then added to the DOM
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal'
+    const html = `
+       <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${i + 1} deposit</div>
+          <div class="movements__value">${mov}€</div>
+        </div>
+  `;
+    // insertAdjacentHTML function insert elements in the HTML
+  containerMovements.insertAdjacentHTML('afterbegin', html)
+  })
+}
+
+displayMOvements(account1.movements)
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-
+/*
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -76,7 +95,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
-/*
+
 
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
