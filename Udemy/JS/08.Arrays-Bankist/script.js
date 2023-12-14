@@ -88,3 +88,24 @@ console.log(arr.slice()); // make a shallow copy of the array
 console.log([...arr]); // another method to make shallow copy of an array 
 
 
+// SPLICE
+// work similar us slice method but mutate the original array
+
+ arr.splice(-1); // remove the last element from the array
+ arr.slice(1, 2); // remove 2 elements starting from position 1
+
+// REVERSE 
+
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j','i', 'h', 'g', 'f'];
+console.log(arr2.reverse()); // reverse method mutate the original array
+
+// CONCAT
+
+const letters = arr.concat(arr2);
+console.log(letters);
+console.log([...arr, ...arr2]); // same result us concat method
+
+// JOIN
+
+console.log(letters.join(' - '));
