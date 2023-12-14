@@ -74,3 +74,17 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// SLICE
+
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4));
+console.log(arr.slice(-2)); // minus value slice the last 2 elements
+console.log(arr.slice(1, -2));
+console.log(arr.slice()); // make a shallow copy of the array
+console.log([...arr]); // another method to make shallow copy of an array 
+
+
