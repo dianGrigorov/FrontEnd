@@ -65,6 +65,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
@@ -75,6 +76,7 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
+/*
 
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
@@ -109,3 +111,35 @@ console.log([...arr, ...arr2]); // same result us concat method
 // JOIN
 
 console.log(letters.join(' - '));
+
+
+const arr3 = [1, 2, 3];
+
+console.log(arr3[0]);
+console.log(arr3.at(0));
+
+// get the last element from the array
+
+console.log(arr3[arr3.length - 1]);
+console.log(arr3.slice(-1)[0]);
+console.log(arr3.at(-1)); 
+
+*/
+
+const movements1 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const movement of movements1) {
+  if (movement > 0) {
+    console.log(`You deposit ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+}
+console.log('------FOREACH------');
+movements1.forEach(function (movement) {
+  if (movement > 0) {
+    console.log(`You deposit ${movement}`);
+  } else {
+    console.log(`You withdrew ${Math.abs(movement)}`);
+  }
+});
