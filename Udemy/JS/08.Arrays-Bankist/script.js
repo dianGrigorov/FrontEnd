@@ -62,10 +62,10 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-const displayMOvements = function (movements) {
+const displayMovements = function (movements) {
   // clear the section we chose 
   containerMovements.innerHTML = '';
-  // for each movements we make string literal to make aur html elements, then added to the DOM
+  // for each movements we make string literal to make our html elements, then added to the DOM
   movements.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal'
     const html = `
@@ -76,10 +76,10 @@ const displayMOvements = function (movements) {
   `;
     // insertAdjacentHTML function insert elements in the HTML
     containerMovements.insertAdjacentHTML('afterbegin', html)
-  })
-}
+  });
+};
 
-displayMOvements(account1.movements)
+displayMovements(account1.movements)
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
