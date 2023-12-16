@@ -83,11 +83,15 @@ displayMovements(account1.movements)
 
 const createUsername = function (accounts) {
   accounts.forEach(function(acc) {
-    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
   })
 }
 createUsername(accounts);
-console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -261,4 +265,15 @@ const movementsDescription = movements2.map((mov, i) =>
 
 console.log(movementsDescription);
 
+//FILTER method
+
+const movements3 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const deposits = movements3.filter(mov => mov > 0);
+const withdrawals = movements3.filter(mov => mov < 0);
+console.log(deposits);
+console.log(withdrawals);
+
 */
+
+// REDUCE method
+
