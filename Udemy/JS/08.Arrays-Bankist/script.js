@@ -80,6 +80,14 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements)
+
+const createUsername = function (accounts) {
+  accounts.forEach(function(acc) {
+    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+  })
+}
+createUsername(accounts);
+console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -227,7 +235,11 @@ const checkDogs = function (arr1, arr2) {
 
 
 checkDogs(juliaDogs, kateDogs);
-*/
+
+
+
+// MAP method 
+// work like foeEach method but return new array
 
 const movements2 = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const euroToUSD = 1.1;
@@ -248,3 +260,5 @@ const movementsDescription = movements2.map((mov, i) =>
 );
 
 console.log(movementsDescription);
+
+*/
