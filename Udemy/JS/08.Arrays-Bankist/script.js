@@ -228,3 +228,23 @@ const checkDogs = function (arr1, arr2) {
 
 checkDogs(juliaDogs, kateDogs);
 */
+
+const movements2 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const euroToUSD = 1.1;
+
+// using callback function
+const movementsUSD = movements2.map(function (mov) {
+  return mov * euroToUSD;
+});
+
+// using arrow function
+const movementsUSD1 = movements2.map(mov => mov * euroToUSD)
+console.log(movements2);
+console.log(movementsUSD);
+console.log(movementsUSD1);
+
+const movementsDescription = movements2.map((mov, i) => 
+  `Movement ${ i + 1 }: You ${mov > 0 ? 'deposit' : 'withdrew'} ${Math.abs(mov)}`
+);
+
+console.log(movementsDescription);
