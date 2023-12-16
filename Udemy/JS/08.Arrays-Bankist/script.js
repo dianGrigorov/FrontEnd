@@ -92,6 +92,13 @@ const createUsername = function (accounts) {
 }
 createUsername(accounts);
 
+
+const calcPrintBalance = function(movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} €`;
+}
+
+calcPrintBalance(account1.movements)
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -273,7 +280,21 @@ const withdrawals = movements3.filter(mov => mov < 0);
 console.log(deposits);
 console.log(withdrawals);
 
-*/
-
 // REDUCE method
 
+const movements4 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const balance = movements4.reduce((acc, mov) => acc + mov, 0);
+
+console.log(balance);
+
+// maximum value 
+
+const maxValue = movements4.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements4[0]);
+
+console.log(maxValue);
+
+*/
