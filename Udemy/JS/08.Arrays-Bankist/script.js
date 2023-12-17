@@ -297,8 +297,6 @@ const maxValue = movements4.reduce((acc, mov) => {
 
 console.log(maxValue);
 
-*/
-
 const calcAverageHumanAge = function (ages) {
 
   const humanAges = ages.map(age => age <= 2 ? age * 2 : 16 + age * 4);
@@ -313,3 +311,5 @@ const calcAverageHumanAge = function (ages) {
 
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
+
+*/
