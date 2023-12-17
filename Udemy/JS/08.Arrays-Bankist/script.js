@@ -82,18 +82,18 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements)
 
 const createUsername = function (accounts) {
-  accounts.forEach(function(acc) {
+  accounts.forEach(function (acc) {
     acc.username = acc.owner
-    .toLowerCase()
-    .split(' ')
-    .map(name => name[0])
-    .join('');
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
   })
 }
 createUsername(accounts);
 
 
-const calcPrintBalance = function(movements) {
+const calcPrintBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} €`;
 }
@@ -298,3 +298,18 @@ const maxValue = movements4.reduce((acc, mov) => {
 console.log(maxValue);
 
 */
+
+const calcAverageHumanAge = function (ages) {
+
+  const humanAges = ages.map(age => age <= 2 ? age * 2 : 16 + age * 4);
+
+  const oldestDogs = humanAges.filter(dog => dog >= 18);
+  const averageAge = humanAges.reduce((acc, age) => acc + age, 0) / humanAges.length;
+
+  console.log(humanAges);
+  console.log(oldestDogs);
+  console.log(averageAge);
+};
+
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
