@@ -92,13 +92,36 @@ const createUsername = function (accounts) {
 }
 createUsername(accounts);
 
+const calcDisplaySummary = function (movements) {
+  const income = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${income} €`;
 
-const calcPrintBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  const outcomes = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0)
+  labelSumOut.textContent = `${Math.abs(outcomes)} €`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1
+    })
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumInterest.textContent = `${interest} €`;
+};
+calcDisplaySummary(account1.movements)
+
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, int) => acc + int, 0);
   labelBalance.textContent = `${balance} €`;
+
 }
 
-calcPrintBalance(account1.movements)
+calcDisplayBalance(account1.movements)
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -313,4 +336,14 @@ calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4])
 
 */
+// Method chaining
 
+const euroToUSD = 1.1;
+const movements5 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const totalDepositsUSD = movements5
+  .filter(mov => mov > 0)
+  .map(mov => mov * euroToUSD)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
