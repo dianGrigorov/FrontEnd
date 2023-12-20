@@ -33,7 +33,14 @@ const account4 = {
   pin: 4444,
 };
 
-const accounts = [account1, account2, account3, account4];
+const account5 = {
+  owner: 'Dian Grigorov',
+  movements: [430, 1000, -1000, 700, 500, 90],
+  interestRate: 1.4,
+  pin: 5555,
+};
+
+const accounts = [account1, account2, account3, account4, account5];
 
 // Elements
 const labelWelcome = document.querySelector('.welcome');
