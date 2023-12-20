@@ -86,7 +86,6 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements)
 
 const createUsername = function (accounts) {
   accounts.forEach(function (acc) {
@@ -152,7 +151,7 @@ btnLogin.addEventListener('click', function (e) {
     // Display summary
     calcDisplaySummary(currentAccount)
   }
-})
+});
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
