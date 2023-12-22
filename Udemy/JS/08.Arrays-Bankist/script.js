@@ -102,19 +102,19 @@ const calcDisplaySummary = function (acc) {
   const income = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumIn.textContent = `${income} €`;
+  labelSumIn.textContent = `${income.toFixed(2)} €`;
 
   const outcomes = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0)
-  labelSumOut.textContent = `${Math.abs(outcomes)} €`;
+  labelSumOut.textContent = `${Math.abs(outcomes).toFixed(2)} €`;
 
   const interest = acc.movements
     .filter(mov => mov > 0)
     .map(deposit => (deposit * acc.interestRate) / 100)
     .filter(int => int >= 1)
     .reduce((acc, mov) => acc + mov, 0);
-  labelSumInterest.textContent = `${interest} €`;
+  labelSumInterest.textContent = `${interest.toFixed(2)} €`;
 };
 
 
@@ -180,6 +180,19 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)){
+// Add the movement
+currentAccount.movements.push(amount);
+
+// Update UI
+  createUI(currentAccount);
+}
+inputLoanAmount.value = '';
+});
 
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
@@ -451,5 +464,21 @@ console.log(accounts);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 
 console.log(account);
+
+
+// Methods SOME and EVERY
+
+
+const movements6 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements6);
+
+//EQUALITY
+console.log(movements6.includes(-130));
+//CONDITION
+const anyDeposits = movements6.some(mov => mov > 0);
+console.log(anyDeposits);
+// Every method
+console.log(movements6.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
 
 */
