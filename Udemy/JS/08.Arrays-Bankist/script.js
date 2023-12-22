@@ -481,4 +481,28 @@ console.log(anyDeposits);
 console.log(movements6.every(mov => mov > 0));
 console.log(account4.movements.every(mov => mov > 0));
 
+
+// Methods FLAT and FLATMAP
+
+// const accountsMovements = accounts.map(acc => acc.movements);
+// console.log(accountsMovements);
+// const allMovements = accountsMovements.flat();
+// console.log(allMovements);
+// const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+
+// Flat 
+const overallBalance = accounts
+.map(acc => acc.movements)
+.flat()
+.reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
+// flatMap
+// first call map method over an array then call flat method
+// flatMap goes one level deep ONLY
+const overallBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overallBalance);
+
 */
