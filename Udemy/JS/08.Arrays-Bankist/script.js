@@ -69,11 +69,14 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   // clear the section we chose 
   containerMovements.innerHTML = '';
   // for each movements we make string literal to make our html elements, then added to the DOM
-  movements.forEach(function (mov, i) {
+
+  const movs = sort ? movements.slice().sort((a, b ) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal'
     const html = `
        <div class="movements__row">
@@ -184,14 +187,14 @@ btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
 
   const amount = Number(inputLoanAmount.value);
-if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)){
-// Add the movement
-currentAccount.movements.push(amount);
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add the movement
+    currentAccount.movements.push(amount);
 
-// Update UI
-  createUI(currentAccount);
-}
-inputLoanAmount.value = '';
+    // Update UI
+    createUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
 });
 
 btnClose.addEventListener('click', function (e) {
@@ -211,6 +214,15 @@ btnClose.addEventListener('click', function (e) {
 
   inputCloseUsername.value = inputClosePin.value = '';
 });
+
+let sort = false;
+
+btnSort.addEventListener('click', function(e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sort);
+  sort = !sort;
+})
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -506,3 +518,29 @@ const overallBalance2 = accounts
 console.log(overallBalance);
 
 */
+// SORT arrays
+// sort alphabetical even numbers 
+// !!!!!! Sort method mutate the original array !!!!!!!
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+
+const movements6 = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements6);
+// Sorted Ascending  
+// movements6.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+
+movements6.sort((a, b) => a - b);
+console.log(movements6);
+
+// Sorted Descending 
+
+// movements6.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (a < b) return 1;
+// });
+
+movements6.sort((a, b) => b - a);
+console.log(movements6);
