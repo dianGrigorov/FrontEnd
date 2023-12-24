@@ -74,7 +74,7 @@ const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
   // for each movements we make string literal to make our html elements, then added to the DOM
 
-  const movs = sort ? movements.slice().sort((a, b ) => a - b) : movements;
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal'
@@ -217,7 +217,7 @@ btnClose.addEventListener('click', function (e) {
 
 let sort = false;
 
-btnSort.addEventListener('click', function(e) {
+btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   displayMovements(currentAccount.movements, !sort);
   sort = !sort;
@@ -517,7 +517,7 @@ const overallBalance2 = accounts
   .reduce((acc, mov) => acc + mov, 0);
 console.log(overallBalance);
 
-*/
+
 // SORT arrays
 // sort alphabetical even numbers 
 // !!!!!! Sort method mutate the original array !!!!!!!
@@ -544,3 +544,37 @@ console.log(movements6);
 
 movements6.sort((a, b) => b - a);
 console.log(movements6);
+
+*/
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//Empty array method
+
+const x = new Array(7);
+console.log(x);
+
+x.fill(1); // first value is the element to fill
+console.log(x);
+
+x.fill(2, 3) // second value is the starting index
+console.log(x);
+
+x.fill(4, 3, 6) // third value is the ending index but not included
+console.log(x);
+
+// Array.from
+
+const y = Array.from({ length: 7}, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7}, (_, i) => i + 1);
+console.log(z);
+
+labelBalance.addEventListener('click', function () {
+  
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), el => Number(el.textContent.replace('€', '')));
+  console.log(movementsUI);
+
+});
