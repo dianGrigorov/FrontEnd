@@ -545,8 +545,6 @@ console.log(movements6);
 movements6.sort((a, b) => b - a);
 console.log(movements6);
 
-*/
-
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(new Array(1, 2, 3, 4, 5, 6, 7));
 
@@ -578,3 +576,57 @@ labelBalance.addEventListener('click', function () {
   console.log(movementsUI);
 
 });
+
+*/
+
+// 1. Sum all the deposits from the accounts
+
+const deposits = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, mov) => sum + mov, 0);
+
+console.log(deposits);
+
+// 2. How many deposits has at least 1000$ in the bank
+
+const numDeposit1000 = accounts
+  // using reduce method and prefixed operator
+  // .flatMap(acc => acc.movements)
+  // .reduce((sum, cur) => (cur >= 1000 ? ++sum : sum) ,0)
+
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov >= 1000).length; // using length property
+
+console.log(numDeposit1000);
+
+//3. Create object which contains the sum of the deposits ant of the withdrawals using the reduce method
+
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((sums, cur) => {
+    // cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+
+    // using bracket notation
+    sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+    return sums
+  }, { deposits: 0, withdrawals: 0 });
+
+console.log(sums);
+
+//4.Convert string to a title case
+
+const convertTitleCase = function (title) {
+
+ const capitalize = str => str[0].toUpperCase() + str.slice(1);
+  const exception = ['a', 'and', 'an', 'the', 'but', 'or', 'on', 'in', 'with']
+
+  const titleCase = title
+  .toLowerCase()
+  .split(' ')
+  .map(word => exception.includes(word) ? word : capitalize(word))
+
+  return capitalize(title)
+};
+
+console.log(convertTitleCase('a this is a Nice title'));
