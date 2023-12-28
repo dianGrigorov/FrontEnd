@@ -309,7 +309,7 @@ console.log((2.7).toFixed(3));
 console.log((2.73333).toFixed(2));
 console.log(+(2.73333).toFixed(2));
 
-*/
+
 // Remaining operator
 
 console.log(5 % 2);
@@ -321,3 +321,7 @@ labelBalance.addEventListener('click', function () {
     }
   })
 })
+
+*/
+
+// Big int
