@@ -325,3 +325,17 @@ labelBalance.addEventListener('click', function () {
 */
 
 // Big int
+
+console.log(342633246143064343754n);
+console.log(BigInt(24235626542432));
+
+const huge = 423625652643234543n;
+const num = 23;
+
+console.log(huge * BigInt(num));
+console.log(20n === 20); // false
+console.log(20n == 20); // true
+console.log(typeof 20n);
+
+console.log(huge + ' is really big');
+
