@@ -81,7 +81,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
-const formatMovementDate = function (date) {
+const formatMovementDate = function (date , locale) {
 
   const calcDaysPassed = (date1, date2) => Math.abs(date1 - date2) / (1000 * 60 * 60 * 24);
 
@@ -92,11 +92,13 @@ const formatMovementDate = function (date) {
   if (daysPassed === 1) return 'Yesterday';
   if (daysPassed <= 7) return `${daysPassed} days ago`;
 
-  const day = `${date.getDate()}`.padStart(2, 0);
-  const month = `${date.getMonth() + 1}`.padStart(2, 0);
-  const year = date.getFullYear();
+  // const day = `${date.getDate()}`.padStart(2, 0);
+  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  // const year = date.getFullYear();
 
-  return `${day}/${month}/${year}`;
+  // return `${day}/${month}/${year}`;
+
+  return new Intl.DateTimeFormat(locale).format(date)
 };
 
 const displayMovements = function (acc, sort = false) {
@@ -107,7 +109,7 @@ const displayMovements = function (acc, sort = false) {
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const date = new Date(acc.movementsDates[i]);
-    const displayDate = formatMovementDate(date)
+    const displayDate = formatMovementDate(date, currentAccount.locale)
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${i + 1
@@ -196,16 +198,28 @@ btnLogin.addEventListener('click', function (e) {
       }`;
     containerApp.style.opacity = 100;
 
+    const now = new Date();
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+      // weekday: 'long',
+    };
+    // const local = navigator.language;
+    // console.log(local);
+    labelDate.textContent = new Intl.DateTimeFormat(currentAccount.locale, options).format(now);
     // day/month/year
 
-    const now = new Date();
-    const day = `${now.getDate()}`.padStart(2, 0);
-    const month = `${now.getMonth()}`.padStart(2, 0);
-    const year = now.getFullYear();
-    const hours = `${now.getHours()}`.padStart(2, 0);
-    const min = `${now.getMinutes()}`.padStart(2, 0);
+    // const now = new Date();
+    // const day = `${now.getDate()}`.padStart(2, 0);
+    // const month = `${now.getMonth()}`.padStart(2, 0);
+    // const year = now.getFullYear();
+    // const hours = `${now.getHours()}`.padStart(2, 0);
+    // const min = `${now.getMinutes()}`.padStart(2, 0);
 
-    labelDate.textContent = `${day}/${month}/${year} ${hours}:${min}`;
+    // labelDate.textContent = `${day}/${month}/${year} ${hours}:${min}`;
 
 
     // Clear input fields
