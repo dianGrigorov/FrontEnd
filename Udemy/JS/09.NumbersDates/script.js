@@ -322,7 +322,7 @@ labelBalance.addEventListener('click', function () {
   })
 })
 
-*/
+
 
 // Big int
 
@@ -338,4 +338,17 @@ console.log(20n == 20); // true
 console.log(typeof 20n);
 
 console.log(huge + ' is really big');
+
+*/
+
+// Create date
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date('Aug 02 2020 18:05:41'));
+
+console.log(new Date(2034, 9, 21, 15, 23));
+
+// Working with dates
 
