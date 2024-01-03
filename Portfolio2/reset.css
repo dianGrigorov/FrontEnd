@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color:var(--bg-dark);
+    color: var(--text-color);
+}
+
+
+:root {
+    --bg-dark: #222831;
+    --text-color: #fff;
+    --text-color_blue:#00ADB5;
+}
