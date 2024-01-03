@@ -32,7 +32,8 @@ document.addEventListener('keydown', function (e) {
 
 
 ////////////////////////////
-
+/*
+*//
 // Selecting elements
 console.log(document.documentElement);
 console.log(document.head);
@@ -63,3 +64,5 @@ document.querySelector('.btn--close-cookie').addEventListener('click', () => {
   message.remove();
   // message.parentElement.removeChild(message); // old way
 });
+
+// Styles 
