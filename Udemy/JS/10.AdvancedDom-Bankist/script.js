@@ -29,3 +29,37 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+
+////////////////////////////
+
+// Selecting elements
+console.log(document.documentElement);
+console.log(document.head);
+console.log(document.body);
+
+const header = document.querySelector('.header');
+const allSection = document.querySelectorAll('.section');
+console.log(allSection);
+
+console.log(document.getElementById('section--1'));
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+
+console.log(document.getElementsByClassName('btn'));
+
+// Creating and inserting elements 
+
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+message.innerHTML = 'We use cookies. <button class="btn btn--close-cookie">Got it</button>';
+
+header.append(message); // place it in the end of the element
+// header.prepend(message); // place it in the beginning of the element
+
+// Delete elements
+
+document.querySelector('.btn--close-cookie').addEventListener('click', () => {
+  message.remove();
+  // message.parentElement.removeChild(message); // old way
+});
