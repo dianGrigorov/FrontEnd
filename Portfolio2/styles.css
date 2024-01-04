@@ -1,19 +1,21 @@
 @import "reset.css";
 
 .header {
+
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     background-image: url("img/Rectangle\ 56.svg");
-position: relative;
+    position: relative;
+    
 }
 
 .nav {
     display: flex;
-    margin: auto;
     align-items: center;
-    justify-content: center;
-    width: 80vw;
+    justify-content: space-between;
+    width: 90vw;
     height: 100px;
+    margin: auto;
     position: sticky;
     top: 0;
 }
@@ -43,24 +45,120 @@ position: relative;
 .nav--item.active {
     font-weight: 700;
 }
+
 .hello {
     font-size: 28rem;
     color: rgba(255, 255, 255, 0.082);
     position: absolute;
     top: 20px;
-    left: 0;
+    left: 60px;
     font-weight: bold;
-    
+    overflow: hidden;
+
 }
+
 .hero {
-    width: 80vw;
+    max-width: 90vw;
     display: flex;
+    align-items: center;
     margin: auto;
-    position: relative;
+    margin-top: 120px;
+    gap: 20px;
 }
 
 .hero--text {
     font-size: 3.6rem;
+    flex: 2;
+}
+
+.hero--text h1 {
+    margin-bottom: 30px;
+}
+
+.hero--text p {
+    font-size: 2.4rem;
+    color: var(--text-color-dark);
+    position: relative;
+    margin: 10px 0;
+}
+
+.hero--text p::before {
     position: absolute;
-    top: 250px;
+    content: '';
+    width: 200px;
+    border: 4px solid var(--text-color_blue);
+    border-radius: 5px;
+    top: -20px;
+
+}
+
+.hero--img__container {
+    flex: 2;
+}
+
+.hero--img {
+
+    width: 577px;
+    height: 635px;
+    transform: rotate(-135deg);
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.hero--img img {
+    transform: rotate(135deg) translateY(120px);
+
+}
+
+.bg {
+    background-color: aqua;
+    width: 477px;
+    height: 477px;
+    border-radius: 100px;
+} */
+
+.hero--social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 300px;
+    flex: 1;
+}
+
+.hero--social h4 {
+    transform: rotate(90deg);
+    font-size: 2.5rem;
+    
+}
+
+.hero--social h4::after {
+    position: absolute;
+    top: 45%;
+    content: '';
+    width: 150px;
+    border: 4px solid var(--text-color_blue);
+    border-radius: 10px;
+    margin: 0 30px;
+}
+.social--icons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.icon-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background-color: var(--bg-lighter);
+    transform: rotate(45deg);
+    border-radius: 10px;
+}
+.icon-box i {
+    
+    font-size: 36px;
+    color: var(--text-color);
+    transform: rotate(-45deg);
 }

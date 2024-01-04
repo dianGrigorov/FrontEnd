@@ -23,6 +23,8 @@ body {
 
 :root {
     --bg-dark: #222831;
+    --bg-lighter:#393E46;
     --text-color: #fff;
     --text-color_blue:#00ADB5;
+    --text-color-dark:#eee;
 }
