@@ -9,9 +9,10 @@ const changeText = () => {
     setTimeout(() => {
         text.textContent = 'Web Developer';
         animatedText();
-    },3000)
+    },2000)
 }
 changeText()
+setInterval(changeText, 4000)
 
 function animatedText () {
     let splitText = text.textContent.split('');
