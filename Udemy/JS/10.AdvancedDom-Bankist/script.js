@@ -35,22 +35,22 @@ console.log(btnScrollTo);
 const section1 = document.querySelector('#section--1');
 console.log(section1);
 
-btnScrollTo.addEventListener('click' , (e) => {
+btnScrollTo.addEventListener('click', (e) => {
   // getting coordinate of the element 
-const s1coords = section1.getBoundingClientRect();
+  const s1coords = section1.getBoundingClientRect();
 
-// Scrolling without smooth effect
-// window.scrollTo(s1coords.left + window.scrollX, s1coords.top + window.scrollY);
+  // Scrolling without smooth effect
+  // window.scrollTo(s1coords.left + window.scrollX, s1coords.top + window.scrollY);
 
-// Scrolling with smooth effect need to pass an object as argument
+  // Scrolling with smooth effect need to pass an object as argument
 
-// window.scrollTo({
-//   left: s1coords.left + window.scrollX,
-//   top: s1coords.top + window.scrollY,
-//   behavior: 'smooth',
-// })
+  // window.scrollTo({
+  //   left: s1coords.left + window.scrollX,
+  //   top: s1coords.top + window.scrollY,
+  //   behavior: 'smooth',
+  // })
 
-section1.scrollIntoView({behavior: 'smooth'})
+  section1.scrollIntoView({ behavior: 'smooth' })
 });
 
 ////////////////////////////
@@ -98,3 +98,18 @@ message.style.height = Number.parseFloat(getComputedStyle(message).height,10) + 
 // changing variable value in the css 
 document.documentElement.style.setProperty('--color-primary', 'lightblue');
 */
+
+const h1 = document.querySelector('h1');
+
+const alertH1 = (e) => {
+  alert('Hello from the heading :D');
+
+  h1.removeEventListener('mouseenter', alertH1)
+}
+
+h1.addEventListener('mouseenter', alertH1);
+
+// // old school :D
+// h1.onmouseenter = (e) => {
+//   alert('Hello from the heading :D');
+// };
