@@ -55,8 +55,8 @@ const message = document.createElement('div');
 message.classList.add('cookie-message');
 message.innerHTML = 'We use cookies. <button class="btn btn--close-cookie">Got it</button>';
 
-header.append(message); // place it in the end of the element
-// header.prepend(message); // place it in the beginning of the element
+// header.append(message); // place it in the end of the element
+header.prepend(message); // place it in the beginning of the element
 
 // Delete elements
 
@@ -66,3 +66,12 @@ document.querySelector('.btn--close-cookie').addEventListener('click', () => {
 });
 
 // Styles 
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+// get the computed styles from the document
+console.log(getComputedStyle(message).color);
+message.style.height = Number.parseFloat(getComputedStyle(message).height,10) + 30 + 'px';
+
+// changing variable value in the css 
+document.documentElement.style.setProperty('--color-primary', 'lightblue');
