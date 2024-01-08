@@ -30,10 +30,32 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+console.log(btnScrollTo);
+const section1 = document.querySelector('#section--1');
+console.log(section1);
+
+btnScrollTo.addEventListener('click' , (e) => {
+  // getting coordinate of the element 
+const s1coords = section1.getBoundingClientRect();
+
+// Scrolling without smooth effect
+// window.scrollTo(s1coords.left + window.scrollX, s1coords.top + window.scrollY);
+
+// Scrolling with smooth effect need to pass an object as argument
+
+// window.scrollTo({
+//   left: s1coords.left + window.scrollX,
+//   top: s1coords.top + window.scrollY,
+//   behavior: 'smooth',
+// })
+
+section1.scrollIntoView({behavior: 'smooth'})
+});
 
 ////////////////////////////
 /*
-*/
+
 // Selecting elements
 console.log(document.documentElement);
 console.log(document.head);
@@ -75,3 +97,4 @@ message.style.height = Number.parseFloat(getComputedStyle(message).height,10) + 
 
 // changing variable value in the css 
 document.documentElement.style.setProperty('--color-primary', 'lightblue');
+*/
