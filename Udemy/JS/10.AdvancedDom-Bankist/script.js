@@ -31,9 +31,7 @@ document.addEventListener('keydown', function (e) {
 });
 
 const btnScrollTo = document.querySelector('.btn--scroll-to');
-console.log(btnScrollTo);
 const section1 = document.querySelector('#section--1');
-console.log(section1);
 
 btnScrollTo.addEventListener('click', (e) => {
   // getting coordinate of the element 
@@ -97,7 +95,7 @@ message.style.height = Number.parseFloat(getComputedStyle(message).height,10) + 
 
 // changing variable value in the css 
 document.documentElement.style.setProperty('--color-primary', 'lightblue');
-*/
+
 
 const h1 = document.querySelector('h1');
 
@@ -113,3 +111,30 @@ h1.addEventListener('mouseenter', alertH1);
 // h1.onmouseenter = (e) => {
 //   alert('Hello from the heading :D');
 // };
+
+// BUBBLING AND CAPTURING
+
+const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min); 
+
+//generate a random color 'rgb(255, 255, 255)'
+const randomColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+
+document.querySelector('.nav__link').addEventListener('click', function(e) {
+  console.log(this);
+this.style.backgroundColor = randomColor();
+
+// // stop propagation
+// e.stopPropagation();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  console.log(this);
+  this.style.backgroundColor = randomColor();
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+  console.log(this);
+  this.style.backgroundColor = randomColor();
+});
+
+*/
