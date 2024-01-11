@@ -94,10 +94,9 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 // Menu fade animation
-const handleHover = function (e){
+const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
-    console.log(link);
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
     const logo = link.closest('.nav').querySelector('img');
     siblings.forEach(el => {
@@ -113,13 +112,29 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 
 // Sticky navigation
-const initialCoords = section1.getBoundingClientRect();
+// const initialCoords = section1.getBoundingClientRect();
 
-window.addEventListener('scroll', function () {
-if(window.scrollY > initialCoords.top){
-  nav.classList.add('sticky');
-} else nav.classList.remove('sticky');
+// window.addEventListener('scroll', function () {
+// if(window.scrollY > initialCoords.top){
+//   nav.classList.add('sticky');
+// } else nav.classList.remove('sticky');
+// });
+
+// Sticky navigation: Intersection Observer API
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  if(!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
 });
+headerObserver.observe(header);
 
 /////////////////////////////
 ////////////////////////////
@@ -237,5 +252,22 @@ console.log(h1.parentElement.children);
 [...h1.parentElement.children].forEach(function (el) {
   if (el !== h1) el.style.transform = 'scale(0.5)';
 });
+
+// Sticky navigation: Intersection Observer API
+// Intersection Observe API accept a callback function and object with options
+const obsCallback = function (entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  })
+};
+
+const obsOptions = {
+  root: null,
+  threshold: 0.1,
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1);
+
 
 */
