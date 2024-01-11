@@ -76,7 +76,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 // Tabbed component
 
-
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab')
   // Guard clause
@@ -98,6 +97,7 @@ tabsContainer.addEventListener('click', function (e) {
 const handleHover = function (e){
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
+    console.log(link);
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
     const logo = link.closest('.nav').querySelector('img');
     siblings.forEach(el => {
@@ -110,6 +110,16 @@ const handleHover = function (e){
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+
+// Sticky navigation
+const initialCoords = section1.getBoundingClientRect();
+
+window.addEventListener('scroll', function () {
+if(window.scrollY > initialCoords.top){
+  nav.classList.add('sticky');
+} else nav.classList.remove('sticky');
+});
 
 /////////////////////////////
 ////////////////////////////
