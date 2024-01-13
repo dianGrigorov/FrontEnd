@@ -30,4 +30,16 @@ Person.prototype.calcAge = function () {
     console.log(2037 - this.birthYear);
 };
 
-dido.calcAge()
+dido.calcAge();
+
+console.log(dido.__proto__);
+console.log(dido.__proto__ === Person.prototype);
+console.log(Person.prototype.isPrototypeOf(dido));
+console.log(Person.prototype.isPrototypeOf(Person));
+
+// Add a property on the object
+Person.prototype.species = 'Homo Sapiens';
+console.log(dido.species);
+
+console.log(dido.hasOwnProperty('firstName'));
+console.log(dido.hasOwnProperty('species'));
