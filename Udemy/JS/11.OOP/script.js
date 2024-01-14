@@ -95,7 +95,8 @@ mercedes.accelerate();
 bmw.brake();
 
 */
-
+//////////////////////////////////////////
+/*
 // ES6 Classes
 
 // class expression
@@ -121,3 +122,45 @@ jessica.calcAge();
 // 1. Classes ane NOT hoisted
 // 2. Classes are first-class citizen
 // 3. Classes are executed in strict mode always
+
+*/
+
+////////////////////////////////////////////
+
+// Getters and Setters
+
+const account = {
+    owner: 'Dian',
+    movements: [100, 400, 320, 570],
+
+    get latest() {
+        return this.movements.slice(-1).pop();
+    },
+
+    set latest(mov) {
+        this.movements.push(mov);
+    },
+}
+
+console.log(account.latest);
+account.latest = 500;
+console.log(account.movements);
+
+class Person {
+    constructor(fullName, birthYear) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+    }
+    calcAge() {
+        console.log(2037 - this.birthYear);
+    }
+
+    set fullName (name) {
+        console.log(name);
+        if (name.include(' ')) this._fullName = name;
+        else alert(`${name} is not a full name`)
+    }
+    get fullName() {
+        return this._fullName
+    }
+};
