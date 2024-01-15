@@ -412,7 +412,7 @@ acc1.deposit(400);
 acc1.withdraw(300)
 console.log(acc1);
 
-*/
+
 
 ///////////////////////////////////
 
@@ -452,15 +452,18 @@ class Account {
 
     deposit(val) {
         this.#movements.push(val);
+        return this;
     }
     withdraw(val) {
         this.deposit(-val);
+        return this
     }
 
     requestLoan(val) {
         if(this.#approveLoan(val)) {
             this.deposit(val);
             console.log(`Loan for ${val} ${this.currency} approved!`);
+            return this;
         }
     }
     // Private methods
@@ -478,3 +481,63 @@ acc1.requestLoan(1000)
 // console.log(acc1.#pin);
 console.log(acc1.getMovements());
 console.log(acc1);
+
+// Chaining methods
+// All chaining methods need to return the object it self with "this" keyword  
+acc1.deposit(300).deposit(4000).requestLoan(300000).withdraw(4000);
+console.log(acc1.getMovements());
+*/
+
+///////////////////////////////
+
+// Coding Challenge #4
+// Your tasks:
+// 1. Re - create Challenge #3, but this time using ES6 classes: create an 'EVCl'
+// child class of the 'CarCl' class
+// 2. Make the 'charge' property private
+// 3. Implement the ability to chain the 'accelerate' and 'chargeBattery'
+// methods of this class, and also update the 'brake' method in the 'CarCl'
+// class. Then experiment with chaining!
+// Test data:
+// § Data car 1: 'Rivian' going at 120 km / h, with a charge of 23 %
+//     GOOD LUCK 😀
+
+class Car {
+    constructor(brand, speed) {
+
+        this.brand = brand;
+        this.speed = speed;
+    }
+    accelerate() {
+        this.speed += 10;
+    }
+    brake() {
+        this.speed -= 5;
+        console.log(`Speed reduce to ${this.speed}!`);
+        return this;
+    }
+};
+
+class EV extends Car {
+    #charge
+    constructor(brand, speed, charge) {
+        super(brand, speed);
+        this.#charge = charge;
+    }
+    accelerate() {
+        this.#charge--;
+        this.speed += 20;
+        console.log(`${this.brand} going at ${this.speed} km/h with a charge of ${this.#charge}`);
+        return this;
+    };
+    chargeBattery(chargeTo) {
+        this.#charge = chargeTo;
+        console.log(`Battery is charged to ${this.#charge}`);
+        return this;
+    };
+};
+
+const tesla = new EV('Tesla', 120, 23)
+
+tesla.brake().accelerate().accelerate().chargeBattery(30)
+console.log(tesla);
