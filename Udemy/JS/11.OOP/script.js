@@ -337,7 +337,7 @@ console.log(tesla);
 ////////////////////////////////////////
 
 // Inheritance between "Classes": ES6 Classes
-
+/*
 class Person {
     constructor(fullName, birthYear) {
         this.fullName = fullName;
@@ -388,3 +388,93 @@ console.log(marta);
 marta.calcAge()
 marta.introduce()
 marta.calcAge();
+
+class Account {
+    constructor(owner, currency, pin){
+        this.owner = owner;
+        this.currency = currency;
+        this.pin = pin;
+        this.movements = [];
+        this.locale = navigator.language;
+    }
+
+    // Public interface
+    deposit(val) {
+        this.movements.push(val);
+    }
+    withdraw(val) {
+        this.deposit(-val);
+    }
+}
+
+const acc1 = new Account('Dian', 'EUR', 1111);
+acc1.deposit(400);
+acc1.withdraw(300)
+console.log(acc1);
+
+*/
+
+///////////////////////////////////
+
+// Encapsulation: Protected properties and methods
+
+
+// Public fields
+// Private fields
+// Public methods
+// Private methods
+
+class Account {
+    // Public field
+
+    locale = navigator.language;
+    
+    // Private fields
+    
+    #movements = [];
+    #pin;
+
+    constructor(owner, currency, pin) {
+        this.owner = owner;
+        this.currency = currency;
+        this.#pin = pin;
+        // protected property
+        // this._movements = [];
+        // this.locale = navigator.language;
+    }
+
+    // Public method
+
+    // Public interface
+    getMovements() {
+        return this.#movements;
+    }
+
+    deposit(val) {
+        this.#movements.push(val);
+    }
+    withdraw(val) {
+        this.deposit(-val);
+    }
+
+    requestLoan(val) {
+        if(this.#approveLoan(val)) {
+            this.deposit(val);
+            console.log(`Loan for ${val} ${this.currency} approved!`);
+        }
+    }
+    // Private methods
+    // _approveLoan(val)
+    #approveLoan(val) {
+        return true;
+    }
+}
+
+const acc1 = new Account('Dian', 'EUR', 1111);
+acc1.deposit(400);
+acc1.withdraw(300);
+acc1.requestLoan(1000)
+// console.log(acc1.#movements); no longer be abele to access the property
+// console.log(acc1.#pin);
+console.log(acc1.getMovements());
+console.log(acc1);
