@@ -127,6 +127,7 @@ jessica.calcAge();
 
 ////////////////////////////////////////////
 
+/*
 // Getters and Setters
 
 const account = {
@@ -164,3 +165,25 @@ class Person {
         return this._fullName
     }
 };
+*/
+
+///////////////////////////////////////
+
+// Object.create  
+
+const PersonProto = {
+    calcAge() {
+        console.log(2037 - this.birthYear);
+    },
+    
+};
+
+const steven = Object.create(PersonProto);
+
+console.log(steven);
+steven.userName = 'Steven';
+steven.birthYear = 1987;
+steven.calcAge();
+
+console.log(steven.__proto__ === PersonProto);
+
