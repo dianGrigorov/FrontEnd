@@ -338,7 +338,7 @@ console.log(tesla);
 
 // Inheritance between "Classes": ES6 Classes
 
-class Person { 
+class Person {
     constructor(fullName, birthYear) {
         this.fullName = fullName;
         this.birthYear = birthYear;
@@ -356,7 +356,7 @@ class Person {
         return 2037 - this.birthYear;
     }
     set fullName(name) {
-        if(name.include(' ')) this._fullName = name;
+        if (name.includes(' ')) this._fullName = name;
         else alert(`${name} is not a full name!`)
     }
     get fullName() {
@@ -367,5 +367,24 @@ class Person {
     static hey() {
         console.log('Hey there 👋');
     }
-}
+};
 
+class Student extends Person {
+    constructor(fullName, birthYear, course) {
+        // Always needs to happen first
+        super(fullName, birthYear);
+        this.course = course;
+    }
+    introduce() {
+        console.log(`My name is ${this.fullName} and I study ${this.course}`);
+    }
+
+    calcAge() {
+        console.log(`I'm ${2037 - this.birthYear} years old`);
+    }
+};
+const marta = new Student('Marta Jones', 1999, 'Computer Science')
+console.log(marta);
+marta.calcAge()
+marta.introduce()
+marta.calcAge();
