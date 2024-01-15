@@ -234,3 +234,40 @@ const bmw = new CarCl('BMW', 120);
 console.log(bmw.speedUS);
 
 */
+
+///////////////////////////////////
+
+// Inheritance between classes   
+
+// 1. Constructor function
+
+const Person = function (firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+    console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+    // Bad practice  
+    // this.firstName = firstName; 
+    // this.birthYear = birthYear;
+    Person.call(this, firstName, birthYear);
+    this.course = course;
+};
+
+// Linking prototypes 
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+    console.log(`My name is ${this.firstName} and i study ${this.course}`);
+};
+
+const mike = new Student ('Mike', 1999, 'Computer Science');
+
+mike.introduce();
+mike.calcAge();
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor);
