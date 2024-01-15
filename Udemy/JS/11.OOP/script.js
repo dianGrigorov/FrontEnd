@@ -236,7 +236,7 @@ console.log(bmw.speedUS);
 */
 
 ///////////////////////////////////
-
+/*
 // Inheritance between classes   
 
 // 1. Constructor function
@@ -271,3 +271,101 @@ mike.introduce();
 mike.calcAge();
 Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor);
+*/
+
+///////////////////////////////////////////
+
+// Coding Challenge #3
+// Your tasks:
+// 1. Use a constructor function to implement an Electric Car(called 'EV') as a child
+// "class" of 'Car'.Besides a make and current speed, the 'EV' also has the
+// current battery charge in % ('charge' property)
+// 2. Implement a 'chargeBattery' method which takes an argument
+// 'chargeTo' and sets the battery charge to 'chargeTo'
+// 3. Implement an 'accelerate' method that will increase the car's speed by 20,
+// and decrease the charge by 1 %.Then log a message like this: 'Tesla going at 140
+// km / h, with a charge of 22 % '
+// 4. Create an electric car object and experiment with calling 'accelerate',
+//     'brake' and 'chargeBattery'(charge to 90 %).Notice what happens when
+// you 'accelerate'! Hint: Review the definiton of polymorphism 😉
+// Test data:
+// § Data car 1: 'Tesla' going at 120 km / h, with a charge of 23 %
+//     GOOD LUCK 😀
+
+/*
+const Car = function (name, speed) {
+    this.name = name;
+    this.speed = speed;
+};
+
+const EV = function (name, speed, charge) {
+    Car.call(this, name, speed);
+    this.charge = charge;
+};
+
+Car.prototype.accelerate = function () {
+    this.speed += 10;
+};
+
+Car.prototype.brake = function () {
+    this.speed -= 5;
+};
+
+// Link the prototypes
+EV.prototype = Object.create(Car.prototype);
+
+EV.prototype.chargeBattery = function (chargeTo) {
+    this.charge = chargeTo
+};
+
+EV.prototype.accelerate = function () {
+    this.charge --;
+    this.speed += 20;
+    console.log(`${this.name} going at ${this.speed} km/h with a charge of ${this.charge}`);
+};
+
+const tesla = new EV ('Tesla', 120, 23);
+
+console.log(tesla);
+tesla.chargeBattery(100);
+tesla.accelerate();
+tesla.accelerate();
+console.log(tesla);
+
+*/
+
+////////////////////////////////////////
+
+// Inheritance between "Classes": ES6 Classes
+
+class Person { 
+    constructor(fullName, birthYear) {
+        this.fullName = fullName;
+        this.birthYear = birthYear;
+    }
+
+    // Instance method
+
+    calcAge() {
+        console.log(2037 - this.birthYear);
+    }
+    greet() {
+        console.log(`Hey ${this.fullName}`);
+    }
+    get age() {
+        return 2037 - this.birthYear;
+    }
+    set fullName(name) {
+        if(name.include(' ')) this._fullName = name;
+        else alert(`${name} is not a full name!`)
+    }
+    get fullName() {
+        return this._fullName;
+    }
+
+    // Static methods
+    static hey() {
+        console.log('Hey there 👋');
+    }
+}
+
